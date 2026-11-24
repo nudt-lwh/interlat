@@ -1,0 +1,21 @@
+{
+  "protocol": "E8, fixed before inference. No test-driven selection. Visible explicit calculations for CoT, native hidden thinking disabled. Same 4 development examples as E4, with deterministic worked bills and field updates; final-line dollar extraction. Raw output retained. Frontend reads only current clerk/customer exchange; invalid output leaves the persistent learned state unchanged. Greedy BF16 generation without answer choices.",
+  "small_model": "Qwen3-1.7B",
+  "large_model_preference": "Qwen3-8B (Llama-3.1-8B-Instruct supported if unavailable; actual path and model configuration checksum recorded).",
+  "max_new_tokens": {
+    "small_cot0": 1024,
+    "small_cot4": 1024,
+    "large_direct": 256,
+    "large_cot": 1024,
+    "frontend": 256
+  },
+  "source": "Inputs fixed in P1-1, independent MultiWOZ 2.2 test utterances, synthetic sequences and tariffs. Demonstrations from MultiWOZ 2.2 dev; E4/demos.json. Calibration kept from method iteration seed 42.",
+  "sha256": {
+    "e8.py": "533ffc19917ed3b3ae4fc0b9063ddb264ca76d3747e6db80335a7a724d60e7f6",
+    "cases.json": "b5728b75e7fc702d8733d0bf4d505e0b2de801c7a17260711e56028f1ddeed0e",
+    "demos.json": "a8d6c1159d9686491b4f3845af473528fe69f21ab07d7e65b8ca674c273d85d2",
+    "iterate.py": "70b84de19cb4ce0535b131bde2f96d13e13cc7e96515d6bf8d9c888c024f2447",
+    "inputs.npz": "2a2b040721f1a0d7db7c8884ddd3d9b9de26a6a93861d1b6a3545e8b7665c82a",
+    "calibration_42.npz": "975b4f7284319bf5e68b315045284107ab591ee1c15694812704a3d5032453a7"
+  }
+}

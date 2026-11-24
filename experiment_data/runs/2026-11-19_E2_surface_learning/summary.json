@@ -1,0 +1,77 @@
+{
+  "by_group_budget": {
+    "names/10": {
+      "n": 1000,
+      "correct": 89,
+      "accuracy": 0.089,
+      "adapter_correct": 1000,
+      "adapter_accuracy": 1.0
+    },
+    "sentence/10": {
+      "n": 1000,
+      "correct": 57,
+      "accuracy": 0.057,
+      "adapter_correct": 1000,
+      "adapter_accuracy": 1.0
+    },
+    "words/10": {
+      "n": 1000,
+      "correct": 21,
+      "accuracy": 0.021,
+      "adapter_correct": 1000,
+      "adapter_accuracy": 1.0
+    },
+    "names/30": {
+      "n": 1000,
+      "correct": 36,
+      "accuracy": 0.036,
+      "adapter_correct": 1000,
+      "adapter_accuracy": 1.0
+    },
+    "sentence/30": {
+      "n": 1000,
+      "correct": 16,
+      "accuracy": 0.016,
+      "adapter_correct": 1000,
+      "adapter_accuracy": 1.0
+    },
+    "words/30": {
+      "n": 1000,
+      "correct": 18,
+      "accuracy": 0.018,
+      "adapter_correct": 1000,
+      "adapter_accuracy": 1.0
+    },
+    "names/100": {
+      "n": 1000,
+      "correct": 197,
+      "accuracy": 0.197,
+      "adapter_correct": 1000,
+      "adapter_accuracy": 1.0
+    },
+    "sentence/100": {
+      "n": 1000,
+      "correct": 68,
+      "accuracy": 0.068,
+      "adapter_correct": 1000,
+      "adapter_accuracy": 1.0
+    },
+    "words/100": {
+      "n": 1000,
+      "correct": 129,
+      "accuracy": 0.129,
+      "adapter_correct": 1000,
+      "adapter_accuracy": 1.0
+    }
+  },
+  "first_observed_budget_95pct": {
+    "names": null,
+    "sentence": null,
+    "words": null
+  },
+  "adapter_first_observed_budget_95pct": {
+    "names": 10,
+    "sentence": 10,
+    "words": 10
+  }
+}

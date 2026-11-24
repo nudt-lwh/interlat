@@ -1,0 +1,31 @@
+{
+  "dev": "1500 held-out synthetic tollens examples (original dev, no Belief-R test IDs)",
+  "selection": "macro BU/BM, ties choose highest threshold",
+  "grid": [
+    0,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    0.95,
+    0.99,
+    1.01
+  ],
+  "dev_scores": {
+    "0": 0.8193333333333334,
+    "0.5": 0.8193333333333334,
+    "0.6": 0.8193333333333334,
+    "0.7": 0.8193333333333334,
+    "0.8": 0.8193333333333334,
+    "0.9": 0.8193333333333334,
+    "0.95": 0.8193333333333334,
+    "0.99": 0.8173333333333334,
+    "1.01": 0.31933333333333336
+  },
+  "threshold": 0.95,
+  "gate": "if neural answer changes and max posterior >= threshold use edited neural answer, otherwise archived rule final",
+  "pooling": "masked float32 mean; bf16 backbone, right-pad to 96 and fill batches to eight; fp16 features",
+  "bootstrap": "stratified 4000, seed 1977",
+  "checkpoint_sha256": "46979d0468aefdc739d8967b2ab02963f4f789d85ec71ee55281c672d3757e08"
+}

@@ -1,0 +1,24 @@
+{
+  "fit_seed": 42,
+  "python": "3.13.9",
+  "numpy": "2.5.4",
+  "source_hashes": {
+    "iterate.py": "70b84de19cb4ce0535b131bde2f96d13e13cc7e96515d6bf8d9c888c024f2447",
+    "inputs.npz": "2a2b040721f1a0d7db7c8884ddd3d9b9de26a6a93861d1b6a3545e8b7665c82a",
+    "formal_rows_42.jsonl": "398cf7c462cef0d63b0c2d99193f2da85978192587f1d89994f013f914575f89",
+    "calibration_42.npz": "975b4f7284319bf5e68b315045284107ab591ee1c15694812704a3d5032453a7"
+  },
+  "fit": "300 distinct generated training graphs on widths 2,4,8 and positive single digits; frozen input/decimal decoder; per-operator least squares without post-fit thresholding",
+  "design": "two quotient branches s/x, y/s feed gt or lt; third branch uses complementary direct comparison, other branches and reductions use arithmetic. No undefined division is tested. Rational oracle; all roots integers by construction. Positive inputs; two independent edits from the same initial state.",
+  "basis": [
+    "1",
+    "l",
+    "r",
+    "l*r",
+    "l/r if r != 0 else 0",
+    "gt",
+    "lt"
+  ],
+  "division_diagnostic": "np.isclose with rtol=1e-9, atol=1e-9",
+  "data_seed": 22719
+}

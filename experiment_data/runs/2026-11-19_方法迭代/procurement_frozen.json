@@ -1,0 +1,13 @@
+{
+  "sha256": "30befe2fbe9e1a54734c80f13ae502be98354439ee2e2ec01683cb7cf349e21a",
+  "selected_method": "grounded",
+  "evaluation_seed": 693821,
+  "pairs_per_group": 100,
+  "groups": [
+    "name",
+    "order",
+    "duration"
+  ],
+  "primary": "whole amount exact match; both opposite decisions within pair",
+  "comparison": "direct Qwen A/B on same notices"
+}

@@ -1,0 +1,116 @@
+{
+  "fit_seed": 42,
+  "model": "Qwen3-1.7B with archived encoder LoRA and projection",
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "source": "2026-11-19_\u65b9\u6cd5\u8fed\u4ee3/formal_rows_42.jsonl; source_line is 1-based",
+  "cases": [
+    [
+      "original",
+      "contract"
+    ],
+    [
+      "rename",
+      "contract"
+    ],
+    [
+      "sentence",
+      "contract"
+    ],
+    [
+      "words",
+      "contract"
+    ],
+    [
+      "sentence",
+      "adapter"
+    ],
+    [
+      "words",
+      "adapter"
+    ],
+    [
+      "rename",
+      "probe"
+    ],
+    [
+      "sentence",
+      "probe"
+    ],
+    [
+      "words",
+      "probe"
+    ],
+    [
+      "original",
+      "contract_mixed_batch"
+    ],
+    [
+      "rename",
+      "contract_mixed_batch"
+    ],
+    [
+      "sentence",
+      "contract_mixed_batch"
+    ],
+    [
+      "words",
+      "contract_mixed_batch"
+    ],
+    [
+      "sentence",
+      "adapter_mixed_batch"
+    ],
+    [
+      "words",
+      "adapter_mixed_batch"
+    ]
+  ],
+  "original_batch_max_feature_difference": 0.0,
+  "original_names": [
+    "s",
+    "x0",
+    "x1",
+    "x2",
+    "x3",
+    "x4",
+    "x5",
+    "x6",
+    "x7",
+    "x8",
+    "x9",
+    "x10",
+    "x11"
+  ],
+  "heldout_names": [
+    "alpha",
+    "gamma_00",
+    "gamma_01",
+    "gamma_02",
+    "gamma_03",
+    "gamma_04",
+    "gamma_05",
+    "gamma_06",
+    "gamma_07",
+    "gamma_08",
+    "gamma_09",
+    "gamma_10",
+    "gamma_11"
+  ],
+  "words": [
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine"
+  ],
+  "refit": false,
+  "grammar": "Original API accepts structured name and digit string; contract measures a literal assignment interface restricted to name = ASCII digits. Failure means input outside that interface.",
+  "probe": "Oracle slot and digit segmentation, no refit. Rename bypasses canonical-name replacement. Sentence and word probes feed changed per-digit strings with canonical s to the encoder.",
+  "adapter": "Sentence adapter extracts the supplied numeric slot. Word adapter uses explicit English-to-Arabic digit dictionary. All input/edit strings are rendered then parsed. Graph/target given.",
+  "cache": "Frozen contextual features memoized per distinct literal; agreement/preservation undefined if no state. Null is not success."
+}

@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+experiment_data/artifacts/
+*.pt
+figures/exports/

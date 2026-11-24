@@ -1,0 +1,586 @@
+{
+  "canonical=False,bilinear=False": {
+    "add/2/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/2/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/4/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/4/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/8/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/8/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/10/private": {
+      "n": 120,
+      "correct": 0,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/10/shared": {
+      "n": 120,
+      "correct": 0,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/2/private": {
+      "n": 120,
+      "correct": 60,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/2/shared": {
+      "n": 120,
+      "correct": 65,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/4/private": {
+      "n": 120,
+      "correct": 30,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/4/shared": {
+      "n": 120,
+      "correct": 27,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/8/private": {
+      "n": 120,
+      "correct": 19,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/8/shared": {
+      "n": 120,
+      "correct": 20,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/10/private": {
+      "n": 120,
+      "correct": 3,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/10/shared": {
+      "n": 120,
+      "correct": 1,
+      "agree": 120,
+      "preserved": 120
+    },
+    "two_digit/add/3/private": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/add/3/shared": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/add/9/private": {
+      "n": 100,
+      "correct": 0,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/add/9/shared": {
+      "n": 100,
+      "correct": 0,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/mixed/3/private": {
+      "n": 100,
+      "correct": 30,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/mixed/3/shared": {
+      "n": 100,
+      "correct": 29,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/mixed/9/private": {
+      "n": 100,
+      "correct": 0,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/mixed/9/shared": {
+      "n": 100,
+      "correct": 0,
+      "agree": 100,
+      "preserved": 100
+    }
+  },
+  "canonical=True,bilinear=False": {
+    "add/2/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/2/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/4/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/4/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/8/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/8/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/10/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/10/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/2/private": {
+      "n": 120,
+      "correct": 60,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/2/shared": {
+      "n": 120,
+      "correct": 65,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/4/private": {
+      "n": 120,
+      "correct": 30,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/4/shared": {
+      "n": 120,
+      "correct": 27,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/8/private": {
+      "n": 120,
+      "correct": 19,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/8/shared": {
+      "n": 120,
+      "correct": 20,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/10/private": {
+      "n": 120,
+      "correct": 10,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/10/shared": {
+      "n": 120,
+      "correct": 13,
+      "agree": 120,
+      "preserved": 120
+    },
+    "two_digit/add/3/private": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/add/3/shared": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/add/9/private": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/add/9/shared": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/mixed/3/private": {
+      "n": 100,
+      "correct": 30,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/mixed/3/shared": {
+      "n": 100,
+      "correct": 29,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/mixed/9/private": {
+      "n": 100,
+      "correct": 3,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/mixed/9/shared": {
+      "n": 100,
+      "correct": 3,
+      "agree": 100,
+      "preserved": 100
+    }
+  },
+  "canonical=False,bilinear=True": {
+    "add/2/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/2/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/4/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/4/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/8/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/8/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/10/private": {
+      "n": 120,
+      "correct": 0,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/10/shared": {
+      "n": 120,
+      "correct": 0,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/2/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/2/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/4/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/4/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/8/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/8/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/10/private": {
+      "n": 120,
+      "correct": 0,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/10/shared": {
+      "n": 120,
+      "correct": 0,
+      "agree": 120,
+      "preserved": 120
+    },
+    "two_digit/add/3/private": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/add/3/shared": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/add/9/private": {
+      "n": 100,
+      "correct": 0,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/add/9/shared": {
+      "n": 100,
+      "correct": 0,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/mixed/3/private": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/mixed/3/shared": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/mixed/9/private": {
+      "n": 100,
+      "correct": 0,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/mixed/9/shared": {
+      "n": 100,
+      "correct": 0,
+      "agree": 100,
+      "preserved": 100
+    }
+  },
+  "canonical=True,bilinear=True": {
+    "add/2/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/2/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/4/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/4/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/8/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/8/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/10/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "add/10/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/2/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/2/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/4/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/4/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/8/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/8/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/10/private": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "mixed/10/shared": {
+      "n": 120,
+      "correct": 120,
+      "agree": 120,
+      "preserved": 120
+    },
+    "two_digit/add/3/private": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/add/3/shared": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/add/9/private": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/add/9/shared": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/mixed/3/private": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/mixed/3/shared": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/mixed/9/private": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    },
+    "two_digit/mixed/9/shared": {
+      "n": 100,
+      "correct": 100,
+      "agree": 100,
+      "preserved": 100
+    }
+  }
+}

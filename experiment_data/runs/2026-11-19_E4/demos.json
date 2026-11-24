@@ -1,0 +1,108 @@
+[
+  {
+    "initial": "Guests: 3. Nights: 2. Room rate per guest per night: 19. One-time linen fee per guest: 2. Service fee per night: 4. One-time booking fee: 9. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL1953.json/2",
+        "context": "I have the Express by Holiday Inn Cambridge located on 15-17 norman way, coldhams business park. Their phone number is 01223866800. Would you like to know anything else?",
+        "text": "Yes, could you book the hotel room for me for 7 people?",
+        "field": "guests",
+        "value": 7
+      }
+    ],
+    "gold": 297,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Reprice this hotel booking. Apply each customer's new guest count or stay length in order. Each exchange is a separate amendment. Ignore unrelated requests. Use the clerk's context only to interpret that customer's words. Keep other bill terms fixed.\nGuests: 3. Nights: 2. Room rate per guest per night: 19. One-time linen fee per guest: 2. Service fee per night: 4. One-time booking fee: 9. All charges in dollars.\nClerk context: I have the Express by Holiday Inn Cambridge located on 15-17 norman way, coldhams business park. Their phone number is 01223866800. Would you like to know anything else?\nCustomer: Yes, could you book the hotel room for me for 7 people?\nWhat is the updated total cost in dollars? Output only the whole number."
+      },
+      {
+        "role": "assistant",
+        "content": "297"
+      }
+    ]
+  },
+  {
+    "initial": "Guests: 3. Nights: 2. Room rate per guest per night: 10. One-time linen fee per guest: 6. Service fee per night: 1. One-time booking fee: 6. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL1227.json/6",
+        "context": "Sure, the acorn guest house is a nice place and it includes both free internet and parking. How many nights would you need?",
+        "text": "3 nights starting from saturday.",
+        "field": "nights",
+        "value": 3
+      }
+    ],
+    "gold": 117,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Reprice this hotel booking. Apply each customer's new guest count or stay length in order. Each exchange is a separate amendment. Ignore unrelated requests. Use the clerk's context only to interpret that customer's words. Keep other bill terms fixed.\nGuests: 3. Nights: 2. Room rate per guest per night: 10. One-time linen fee per guest: 6. Service fee per night: 1. One-time booking fee: 6. All charges in dollars.\nClerk context: Sure, the acorn guest house is a nice place and it includes both free internet and parking. How many nights would you need?\nCustomer: 3 nights starting from saturday.\nWhat is the updated total cost in dollars? Output only the whole number."
+      },
+      {
+        "role": "assistant",
+        "content": "117"
+      }
+    ]
+  },
+  {
+    "initial": "Guests: 2. Nights: 2. Room rate per guest per night: 26. One-time linen fee per guest: 1. Service fee per night: 6. One-time booking fee: 8. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL2762.json/16",
+        "context": "I do apologize, the lensfield hotel is not a guesthouse. If star rating isn't important, may I suggest Bridge Guest House? They are fantastic.",
+        "text": "Yes please. I need a reservation for 3 people please.",
+        "field": "guests",
+        "value": 3
+      },
+      {
+        "id": "MUL1078.json/6",
+        "context": "I'm sorry but booking was unsuccessful. Would like to try another day or a shorter stay?",
+        "text": "Can you try for 4 nights?",
+        "field": "nights",
+        "value": 4
+      }
+    ],
+    "gold": 347,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Reprice this hotel booking. Apply each customer's new guest count or stay length in order. Each exchange is a separate amendment. Ignore unrelated requests. Use the clerk's context only to interpret that customer's words. Keep other bill terms fixed.\nGuests: 2. Nights: 2. Room rate per guest per night: 26. One-time linen fee per guest: 1. Service fee per night: 6. One-time booking fee: 8. All charges in dollars.\nClerk context: I do apologize, the lensfield hotel is not a guesthouse. If star rating isn't important, may I suggest Bridge Guest House? They are fantastic.\nCustomer: Yes please. I need a reservation for 3 people please.\nClerk context: I'm sorry but booking was unsuccessful. Would like to try another day or a shorter stay?\nCustomer: Can you try for 4 nights?\nWhat is the updated total cost in dollars? Output only the whole number."
+      },
+      {
+        "role": "assistant",
+        "content": "347"
+      }
+    ]
+  },
+  {
+    "initial": "Guests: 2. Nights: 3. Room rate per guest per night: 10. One-time linen fee per guest: 5. Service fee per night: 7. One-time booking fee: 6. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL2092.json/10",
+        "context": "I'm sorry, there is no availability for that time frame. Would you like to travel a different amount of days?",
+        "text": "Can you check for 2 nights instead? And I need the reference number.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "MUL0681.json/10",
+        "context": "Well, it's in the centre of town. It's cheap, rated 0 stars, has internet and parking. The phone number is 01223327978. The address is 41 warkworth street.",
+        "text": "I would like to make a reservation for el shaddai for four people.",
+        "field": "guests",
+        "value": 4
+      }
+    ],
+    "gold": 120,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Reprice this hotel booking. Apply each customer's new guest count or stay length in order. Each exchange is a separate amendment. Ignore unrelated requests. Use the clerk's context only to interpret that customer's words. Keep other bill terms fixed.\nGuests: 2. Nights: 3. Room rate per guest per night: 10. One-time linen fee per guest: 5. Service fee per night: 7. One-time booking fee: 6. All charges in dollars.\nClerk context: I'm sorry, there is no availability for that time frame. Would you like to travel a different amount of days?\nCustomer: Can you check for 2 nights instead? And I need the reference number.\nClerk context: Well, it's in the centre of town. It's cheap, rated 0 stars, has internet and parking. The phone number is 01223327978. The address is 41 warkworth street.\nCustomer: I would like to make a reservation for el shaddai for four people.\nWhat is the updated total cost in dollars? Output only the whole number."
+      },
+      {
+        "role": "assistant",
+        "content": "120"
+      }
+    ]
+  }
+]

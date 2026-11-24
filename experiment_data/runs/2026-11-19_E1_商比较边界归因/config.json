@@ -1,0 +1,88 @@
+{
+  "fit_seed": 42,
+  "python": "3.13.9",
+  "numpy": "2.5.4",
+  "source_hashes": {
+    "iterate.py": "70b84de19cb4ce0535b131bde2f96d13e13cc7e96515d6bf8d9c888c024f2447",
+    "inputs.npz": "2a2b040721f1a0d7db7c8884ddd3d9b9de26a6a93861d1b6a3545e8b7665c82a",
+    "formal_rows_42.jsonl": "398cf7c462cef0d63b0c2d99193f2da85978192587f1d89994f013f914575f89",
+    "calibration_42.npz": "975b4f7284319bf5e68b315045284107ab591ee1c15694812704a3d5032453a7"
+  },
+  "train_graphs": 300,
+  "train_seed": 42,
+  "dev_seed": 5236951,
+  "dev_edits": 1080,
+  "dev_widths": [
+    3,
+    4,
+    8
+  ],
+  "dev_ranges": [
+    [
+      1,
+      9
+    ],
+    [
+      20,
+      39
+    ],
+    [
+      100,
+      299
+    ]
+  ],
+  "test_input_sha256": "54a13ceba966cee4ccd678dc375dbbd3a4d35111378b2d64f72771ae5f0c2879",
+  "ridge_grid": [
+    1e-08,
+    1e-06,
+    0.0001,
+    0.01
+  ],
+  "dev_correct": {
+    "1e-08": 1014,
+    "1e-06": 1013,
+    "0.0001": 1013,
+    "0.01": 938
+  },
+  "selected_alpha": 1e-08,
+  "loss": "sum squared residual plus alpha times squared non-intercept coefficients; choose dev root exact then smallest alpha",
+  "masks": [
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      0,
+      1,
+      2,
+      4
+    ],
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      2
+    ]
+  ],
+  "node_check": "all post-edit derived nodes, div 1e-9 absolute or relative tolerance, integer outputs rounded",
+  "methods": [
+    "strict masks linear gt/lt",
+    "regularized shared basis"
+  ]
+}

@@ -1,0 +1,1874 @@
+[
+  {
+    "pair": 0,
+    "direction": -1,
+    "initial": "Guests: 3. Nights: 3. Room rate per guest per night: 30. One-time linen fee per guest: 5. Service fee per night: 3. One-time booking fee: 1. All charges in dollars.",
+    "turns": [
+      {
+        "id": "SNG01551.json/14",
+        "shard": 2,
+        "context": "I'm sorry, Booking was unsuccessful. Would you like to try a shorter stay?",
+        "text": "Yes, could you try for one night?",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "SNG0755.json/14",
+        "shard": 2,
+        "context": "I will give it a try again. How many people will there be?",
+        "text": "there are 4 of us.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "PMUL3521.json/10",
+        "shard": 2,
+        "context": "How many people do you need a room for?",
+        "text": "1 person please.",
+        "field": "guests",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "pair": 0,
+    "direction": 1,
+    "initial": "Guests: 3. Nights: 3. Room rate per guest per night: 30. One-time linen fee per guest: 5. Service fee per night: 3. One-time booking fee: 1. All charges in dollars.",
+    "turns": [
+      {
+        "id": "SNG01551.json/14",
+        "shard": 2,
+        "context": "I'm sorry, Booking was unsuccessful. Would you like to try a shorter stay?",
+        "text": "Yes, could you try for one night?",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "SNG0755.json/14",
+        "shard": 2,
+        "context": "I will give it a try again. How many people will there be?",
+        "text": "there are 4 of us.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "PMUL4636.json/6",
+        "shard": 2,
+        "context": "We do have guesthouses available. Is that okay?",
+        "text": "Yes if you can find a place for 5 people",
+        "field": "guests",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "pair": 1,
+    "direction": -1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 18. One-time linen fee per guest: 4. Service fee per night: 7. One-time booking fee: 5. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL2513.json/4",
+        "shard": 1,
+        "context": "I have 4 guesthouses available in the moderate price range. What part of town would you prefer?",
+        "text": "The area doesn't matter. I don't need internet and I need to book it for 1 person.",
+        "field": "guests",
+        "value": 1
+      },
+      {
+        "id": "MUL2254.json/2",
+        "shard": 2,
+        "context": "I have the A and B Guesthouse in the east.",
+        "text": "Please book it for me for 2 nights",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "SNG0933.json/6",
+        "shard": 1,
+        "context": "How many people will be in your party and how long would you like to stay?",
+        "text": "There are 3 of us and we'll be arriving on Saturday.",
+        "field": "guests",
+        "value": 3
+      },
+      {
+        "id": "MUL1189.json/14",
+        "shard": 1,
+        "context": "Booking was unsuccessful. Would you like to shorten your stay or add another day?",
+        "text": "How about 1 night? Could you also please provide me with the reference number? I would also like to book a taxi.",
+        "field": "nights",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "pair": 1,
+    "direction": 1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 18. One-time linen fee per guest: 4. Service fee per night: 7. One-time booking fee: 5. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL2513.json/4",
+        "shard": 1,
+        "context": "I have 4 guesthouses available in the moderate price range. What part of town would you prefer?",
+        "text": "The area doesn't matter. I don't need internet and I need to book it for 1 person.",
+        "field": "guests",
+        "value": 1
+      },
+      {
+        "id": "MUL2254.json/2",
+        "shard": 2,
+        "context": "I have the A and B Guesthouse in the east.",
+        "text": "Please book it for me for 2 nights",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "SNG0933.json/6",
+        "shard": 1,
+        "context": "How many people will be in your party and how long would you like to stay?",
+        "text": "There are 3 of us and we'll be arriving on Saturday.",
+        "field": "guests",
+        "value": 3
+      },
+      {
+        "id": "MUL1273.json/2",
+        "shard": 2,
+        "context": "The alpha-milton guesthouse is in the north area, moderately priced, showing 3 stars. There is no internet or parking. Should I book this for you?",
+        "text": "Yes, please book 3 nights at the alpha-milton guesthouse for me. I would like to check in on wednesday.",
+        "field": "nights",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "pair": 2,
+    "direction": -1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 29. One-time linen fee per guest: 6. Service fee per night: 7. One-time booking fee: 9. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL2151.json/16",
+        "shard": 1,
+        "context": "How many nights would you like to stay?",
+        "text": "Just one night please.",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "SNG1012.json/4",
+        "shard": 2,
+        "context": "Bridge Gue House, Hamilton Lodge, and Hobsons House are all available if you'd like one of those?",
+        "text": "Please book the Hamilton Lodge, for 6 people.",
+        "field": "guests",
+        "value": 6
+      },
+      {
+        "id": "MUL0638.json/12",
+        "shard": 1,
+        "context": "Unfortunately, it doesn't look like there is availability for 7 people, for 4 nights, starting on Wednesday. Would you like to try another day or a shorter stay?",
+        "text": "Ummm, I can swing just 2 nights if that is available.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "PMUL2898.json/10",
+        "shard": 2,
+        "context": "I can help with that. How many people will be staying?",
+        "text": "There will be 4 people.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "SNG0840.json/8",
+        "shard": 1,
+        "context": "How many are in your party?",
+        "text": "3 people. Can I get the reference number please?",
+        "field": "guests",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "pair": 2,
+    "direction": 1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 29. One-time linen fee per guest: 6. Service fee per night: 7. One-time booking fee: 9. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL2151.json/16",
+        "shard": 1,
+        "context": "How many nights would you like to stay?",
+        "text": "Just one night please.",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "SNG1012.json/4",
+        "shard": 2,
+        "context": "Bridge Gue House, Hamilton Lodge, and Hobsons House are all available if you'd like one of those?",
+        "text": "Please book the Hamilton Lodge, for 6 people.",
+        "field": "guests",
+        "value": 6
+      },
+      {
+        "id": "MUL0638.json/12",
+        "shard": 1,
+        "context": "Unfortunately, it doesn't look like there is availability for 7 people, for 4 nights, starting on Wednesday. Would you like to try another day or a shorter stay?",
+        "text": "Ummm, I can swing just 2 nights if that is available.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "PMUL2898.json/10",
+        "shard": 2,
+        "context": "I can help with that. How many people will be staying?",
+        "text": "There will be 4 people.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "PMUL0441.json/2",
+        "shard": 2,
+        "context": "Yes Allenbell is located on 517a coldham lane in the east. Would you like me to book a room for you?",
+        "text": "book for me bed and breakfast for five people from tommorrow.",
+        "field": "guests",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "pair": 3,
+    "direction": -1,
+    "initial": "Guests: 2. Nights: 3. Room rate per guest per night: 10. One-time linen fee per guest: 1. Service fee per night: 7. One-time booking fee: 9. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL2151.json/14",
+        "shard": 1,
+        "context": "The addres is 15-17 norman way, coldhams business park, cb13lh. When would you like to stay?",
+        "text": "I'd like you to book it for Wednesday night for 4 people.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "SNG0768.json/10",
+        "shard": 2,
+        "context": "Unfortunately, we cannot book you for those days. Could you change the number of days?",
+        "text": "Sure, try for two days?",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "MUL1055.json/12",
+        "shard": 2,
+        "context": "Unfortunately the Alexander bed and breakfast guesthouse is unavailable for that date range. Would you like to see if another day is available or book for a shorter stay?",
+        "text": "Can you try booking for one night, instead?",
+        "field": "nights",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "pair": 3,
+    "direction": 1,
+    "initial": "Guests: 2. Nights: 3. Room rate per guest per night: 10. One-time linen fee per guest: 1. Service fee per night: 7. One-time booking fee: 9. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL2151.json/14",
+        "shard": 1,
+        "context": "The addres is 15-17 norman way, coldhams business park, cb13lh. When would you like to stay?",
+        "text": "I'd like you to book it for Wednesday night for 4 people.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "SNG0768.json/10",
+        "shard": 2,
+        "context": "Unfortunately, we cannot book you for those days. Could you change the number of days?",
+        "text": "Sure, try for two days?",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "MUL2193.json/6",
+        "shard": 1,
+        "context": "The Acorn offers both.",
+        "text": "That sounds great. Can you book it for Wednesday for 5 nights?",
+        "field": "nights",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "pair": 4,
+    "direction": -1,
+    "initial": "Guests: 2. Nights: 2. Room rate per guest per night: 29. One-time linen fee per guest: 4. Service fee per night: 1. One-time booking fee: 6. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL4034.json/8",
+        "shard": 2,
+        "context": "Booking was successful, the total fee is 52.8 GBP payable at the station .Reference number is : 4CSMUT8M .what else do i do for you?",
+        "text": "Yes, I'd like to stay at The Lensfield Hotel once we get to town for 4 nights.",
+        "field": "nights",
+        "value": 4
+      },
+      {
+        "id": "SNG0768.json/18",
+        "shard": 2,
+        "context": "I'm sorry, but the University Arms does not have anything available on Saturday for 3 people, for a 3 night stay. Would you like to try a different day?",
+        "text": "I am so sorry. Could you just change the number of people in my party to 5 and try again?",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "MUL1211.json/14",
+        "shard": 1,
+        "context": "I am sorry that is not available. Would you like to try another day or a shorter stay perhaps?",
+        "text": "Yes, please try again for only 2 nights and see if that works.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "SNG0888.json/4",
+        "shard": 1,
+        "context": "The Bridge Guest House is a 3 star guesthouse. It is in the south area. Would you like to book a room?",
+        "text": "Yes, please, for four people.",
+        "field": "guests",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "pair": 4,
+    "direction": 1,
+    "initial": "Guests: 2. Nights: 2. Room rate per guest per night: 29. One-time linen fee per guest: 4. Service fee per night: 1. One-time booking fee: 6. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL4034.json/8",
+        "shard": 2,
+        "context": "Booking was successful, the total fee is 52.8 GBP payable at the station .Reference number is : 4CSMUT8M .what else do i do for you?",
+        "text": "Yes, I'd like to stay at The Lensfield Hotel once we get to town for 4 nights.",
+        "field": "nights",
+        "value": 4
+      },
+      {
+        "id": "SNG0768.json/18",
+        "shard": 2,
+        "context": "I'm sorry, but the University Arms does not have anything available on Saturday for 3 people, for a 3 night stay. Would you like to try a different day?",
+        "text": "I am so sorry. Could you just change the number of people in my party to 5 and try again?",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "MUL1211.json/14",
+        "shard": 1,
+        "context": "I am sorry that is not available. Would you like to try another day or a shorter stay perhaps?",
+        "text": "Yes, please try again for only 2 nights and see if that works.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "MUL2193.json/8",
+        "shard": 1,
+        "context": "Sure, how many people will be staying, and did you want the booking for Wednesday, or Monday?",
+        "text": "I need it starting on Wednesday for 6 people.",
+        "field": "guests",
+        "value": 6
+      }
+    ]
+  },
+  {
+    "pair": 5,
+    "direction": -1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 12. One-time linen fee per guest: 2. Service fee per night: 5. One-time booking fee: 2. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL1834.json/14",
+        "shard": 2,
+        "context": "Ok great, and how many people will I be booking for?",
+        "text": "There will be 8 of us.",
+        "field": "guests",
+        "value": 8
+      },
+      {
+        "id": "SNG0908.json/6",
+        "shard": 2,
+        "context": "I am afraid that was unsuccessful. Would like to book another day or a shorter stay?",
+        "text": "Can we try 2 nights instead then? I'll need the reference number as well.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "MUL0744.json/14",
+        "shard": 1,
+        "context": "Your reservation is confirmed and the reference number is ##",
+        "text": "I'm sorry? Were you able to book the Express by Holiday Inn for 4 people?",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "MUL0671.json/14",
+        "shard": 1,
+        "context": "I'm very sorry I was unable to book at acorn guest house for 5 nights, would you like to try for a shorter stay?",
+        "text": "Yes, please try to book it for four nights instead.",
+        "field": "nights",
+        "value": 4
+      },
+      {
+        "id": "SNG1004.json/8",
+        "shard": 1,
+        "context": "I'm not able to book for those nights. Would you want to try a shorter stay?",
+        "text": "Yes, that would be fine. Is there a room available for one night?",
+        "field": "nights",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "pair": 5,
+    "direction": 1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 12. One-time linen fee per guest: 2. Service fee per night: 5. One-time booking fee: 2. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL1834.json/14",
+        "shard": 2,
+        "context": "Ok great, and how many people will I be booking for?",
+        "text": "There will be 8 of us.",
+        "field": "guests",
+        "value": 8
+      },
+      {
+        "id": "SNG0908.json/6",
+        "shard": 2,
+        "context": "I am afraid that was unsuccessful. Would like to book another day or a shorter stay?",
+        "text": "Can we try 2 nights instead then? I'll need the reference number as well.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "MUL0744.json/14",
+        "shard": 1,
+        "context": "Your reservation is confirmed and the reference number is ##",
+        "text": "I'm sorry? Were you able to book the Express by Holiday Inn for 4 people?",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "MUL0671.json/14",
+        "shard": 1,
+        "context": "I'm very sorry I was unable to book at acorn guest house for 5 nights, would you like to try for a shorter stay?",
+        "text": "Yes, please try to book it for four nights instead.",
+        "field": "nights",
+        "value": 4
+      },
+      {
+        "id": "PMUL3785.json/2",
+        "shard": 2,
+        "context": "That is a great 3 star hotel. It is expensive, but beautiful. What would you like to know?",
+        "text": "i want to book it for 5 nights",
+        "field": "nights",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "pair": 6,
+    "direction": -1,
+    "initial": "Guests: 4. Nights: 2. Room rate per guest per night: 10. One-time linen fee per guest: 2. Service fee per night: 3. One-time booking fee: 9. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL1159.json/12",
+        "shard": 1,
+        "context": "I am sorry, but that was not successful. Would you like to pick a different day or shorter stay?",
+        "text": "How about one night?",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "SNG1012.json/4",
+        "shard": 2,
+        "context": "Bridge Gue House, Hamilton Lodge, and Hobsons House are all available if you'd like one of those?",
+        "text": "Please book the Hamilton Lodge, for 6 people.",
+        "field": "guests",
+        "value": 6
+      },
+      {
+        "id": "PMUL3785.json/4",
+        "shard": 2,
+        "context": "Okay, what day would you like me to make the reservation for and for how many people?",
+        "text": "Book it starting from Friday and it will be for 4 people and I'll also need the reference number. We also need to find a place to eat.",
+        "field": "guests",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "pair": 6,
+    "direction": 1,
+    "initial": "Guests: 4. Nights: 2. Room rate per guest per night: 10. One-time linen fee per guest: 2. Service fee per night: 3. One-time booking fee: 9. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL1159.json/12",
+        "shard": 1,
+        "context": "I am sorry, but that was not successful. Would you like to pick a different day or shorter stay?",
+        "text": "How about one night?",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "SNG1012.json/4",
+        "shard": 2,
+        "context": "Bridge Gue House, Hamilton Lodge, and Hobsons House are all available if you'd like one of those?",
+        "text": "Please book the Hamilton Lodge, for 6 people.",
+        "field": "guests",
+        "value": 6
+      },
+      {
+        "id": "PMUL0090.json/4",
+        "shard": 1,
+        "context": "The arbury lodge guesthouse is one of 32 options for you.",
+        "text": "Will it fit 8 people?",
+        "field": "guests",
+        "value": 8
+      }
+    ]
+  },
+  {
+    "pair": 7,
+    "direction": -1,
+    "initial": "Guests: 2. Nights: 2. Room rate per guest per night: 29. One-time linen fee per guest: 2. Service fee per night: 2. One-time booking fee: 8. All charges in dollars.",
+    "turns": [
+      {
+        "id": "SNG0933.json/6",
+        "shard": 1,
+        "context": "How many people will be in your party and how long would you like to stay?",
+        "text": "There are 3 of us and we'll be arriving on Saturday.",
+        "field": "guests",
+        "value": 3
+      },
+      {
+        "id": "SNG01797.json/4",
+        "shard": 2,
+        "context": "How many days will you be staying?",
+        "text": "I'll be staying for 3 nights starting on tuesday.",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "SNG0768.json/18",
+        "shard": 2,
+        "context": "I'm sorry, but the University Arms does not have anything available on Saturday for 3 people, for a 3 night stay. Would you like to try a different day?",
+        "text": "I am so sorry. Could you just change the number of people in my party to 5 and try again?",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "MUL1066.json/10",
+        "shard": 2,
+        "context": "Unfortunately that booking was unsuccessful . May we try for a shorter stay or a different day?",
+        "text": "How about 2 nights?",
+        "field": "nights",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "pair": 7,
+    "direction": 1,
+    "initial": "Guests: 2. Nights: 2. Room rate per guest per night: 29. One-time linen fee per guest: 2. Service fee per night: 2. One-time booking fee: 8. All charges in dollars.",
+    "turns": [
+      {
+        "id": "SNG0933.json/6",
+        "shard": 1,
+        "context": "How many people will be in your party and how long would you like to stay?",
+        "text": "There are 3 of us and we'll be arriving on Saturday.",
+        "field": "guests",
+        "value": 3
+      },
+      {
+        "id": "SNG01797.json/4",
+        "shard": 2,
+        "context": "How many days will you be staying?",
+        "text": "I'll be staying for 3 nights starting on tuesday.",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "SNG0768.json/18",
+        "shard": 2,
+        "context": "I'm sorry, but the University Arms does not have anything available on Saturday for 3 people, for a 3 night stay. Would you like to try a different day?",
+        "text": "I am so sorry. Could you just change the number of people in my party to 5 and try again?",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "MUL2193.json/10",
+        "shard": 1,
+        "context": "Unfortunately, I was unable to book the acorn on that day for that length of time. Would another day or a shorter stay work for you?",
+        "text": "Yes, lets try for 4 nights",
+        "field": "nights",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "pair": 8,
+    "direction": -1,
+    "initial": "Guests: 3. Nights: 3. Room rate per guest per night: 17. One-time linen fee per guest: 5. Service fee per night: 7. One-time booking fee: 6. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL0071.json/12",
+        "shard": 1,
+        "context": "I'm sorry, those particular dates are filled, if you'd like I could try to make the trip shorter or maybe change days?",
+        "text": "How about just for the one night?",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "SNG0755.json/14",
+        "shard": 2,
+        "context": "I will give it a try again. How many people will there be?",
+        "text": "there are 4 of us.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "PMUL1834.json/12",
+        "shard": 2,
+        "context": "Okay I can help with that! What day would you like to check in and how long will you be staying?",
+        "text": "I want to stay for 3 nights starting from saturday.",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "SNG0840.json/8",
+        "shard": 1,
+        "context": "How many are in your party?",
+        "text": "3 people. Can I get the reference number please?",
+        "field": "guests",
+        "value": 3
+      },
+      {
+        "id": "PMUL3521.json/10",
+        "shard": 2,
+        "context": "How many people do you need a room for?",
+        "text": "1 person please.",
+        "field": "guests",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "pair": 8,
+    "direction": 1,
+    "initial": "Guests: 3. Nights: 3. Room rate per guest per night: 17. One-time linen fee per guest: 5. Service fee per night: 7. One-time booking fee: 6. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL0071.json/12",
+        "shard": 1,
+        "context": "I'm sorry, those particular dates are filled, if you'd like I could try to make the trip shorter or maybe change days?",
+        "text": "How about just for the one night?",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "SNG0755.json/14",
+        "shard": 2,
+        "context": "I will give it a try again. How many people will there be?",
+        "text": "there are 4 of us.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "PMUL1834.json/12",
+        "shard": 2,
+        "context": "Okay I can help with that! What day would you like to check in and how long will you be staying?",
+        "text": "I want to stay for 3 nights starting from saturday.",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "SNG0840.json/8",
+        "shard": 1,
+        "context": "How many are in your party?",
+        "text": "3 people. Can I get the reference number please?",
+        "field": "guests",
+        "value": 3
+      },
+      {
+        "id": "MUL0744.json/14",
+        "shard": 1,
+        "context": "Your reservation is confirmed and the reference number is ##",
+        "text": "I'm sorry? Were you able to book the Express by Holiday Inn for 4 people?",
+        "field": "guests",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "pair": 9,
+    "direction": -1,
+    "initial": "Guests: 3. Nights: 3. Room rate per guest per night: 11. One-time linen fee per guest: 2. Service fee per night: 5. One-time booking fee: 1. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL2513.json/4",
+        "shard": 1,
+        "context": "I have 4 guesthouses available in the moderate price range. What part of town would you prefer?",
+        "text": "The area doesn't matter. I don't need internet and I need to book it for 1 person.",
+        "field": "guests",
+        "value": 1
+      },
+      {
+        "id": "SNG0933.json/8",
+        "shard": 1,
+        "context": "And for how many days?",
+        "text": "It will be for two nights.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "MUL0113.json/10",
+        "shard": 2,
+        "context": "The booking was unsuccessful. Would you like to try for another day or a shorter stay?",
+        "text": "Could you try it for one night? If that works, please book it and get the reference number.",
+        "field": "nights",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "pair": 9,
+    "direction": 1,
+    "initial": "Guests: 3. Nights: 3. Room rate per guest per night: 11. One-time linen fee per guest: 2. Service fee per night: 5. One-time booking fee: 1. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL2513.json/4",
+        "shard": 1,
+        "context": "I have 4 guesthouses available in the moderate price range. What part of town would you prefer?",
+        "text": "The area doesn't matter. I don't need internet and I need to book it for 1 person.",
+        "field": "guests",
+        "value": 1
+      },
+      {
+        "id": "SNG0933.json/8",
+        "shard": 1,
+        "context": "And for how many days?",
+        "text": "It will be for two nights.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "MUL2106.json/20",
+        "shard": 1,
+        "context": "I am unsuccessful with those days. Would you like to try a different number of days or another day?",
+        "text": "Can we try three nights?",
+        "field": "nights",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "pair": 10,
+    "direction": -1,
+    "initial": "Guests: 3. Nights: 3. Room rate per guest per night: 22. One-time linen fee per guest: 4. Service fee per night: 2. One-time booking fee: 9. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL1024.json/18",
+        "shard": 1,
+        "context": "I'm not able to reserve that hotel for 3 days for 6 people. Would you like to try another hotel?",
+        "text": "Can you try 1 night?",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "SNG0888.json/4",
+        "shard": 1,
+        "context": "The Bridge Guest House is a 3 star guesthouse. It is in the south area. Would you like to book a room?",
+        "text": "Yes, please, for four people.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "SNG01353.json/14",
+        "shard": 1,
+        "context": "Sorry, the Acorn Guest house is not able to accomodate you either. I checked with the other moderately priced 4 star lodgings with free wifi, and none have those dates available. Will any other stay work for you?",
+        "text": "Can we try for just 2 nights then?",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "PMUL3521.json/10",
+        "shard": 2,
+        "context": "How many people do you need a room for?",
+        "text": "1 person please.",
+        "field": "guests",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "pair": 10,
+    "direction": 1,
+    "initial": "Guests: 3. Nights: 3. Room rate per guest per night: 22. One-time linen fee per guest: 4. Service fee per night: 2. One-time booking fee: 9. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL1024.json/18",
+        "shard": 1,
+        "context": "I'm not able to reserve that hotel for 3 days for 6 people. Would you like to try another hotel?",
+        "text": "Can you try 1 night?",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "SNG0888.json/4",
+        "shard": 1,
+        "context": "The Bridge Guest House is a 3 star guesthouse. It is in the south area. Would you like to book a room?",
+        "text": "Yes, please, for four people.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "SNG01353.json/14",
+        "shard": 1,
+        "context": "Sorry, the Acorn Guest house is not able to accomodate you either. I checked with the other moderately priced 4 star lodgings with free wifi, and none have those dates available. Will any other stay work for you?",
+        "text": "Can we try for just 2 nights then?",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "PMUL0090.json/4",
+        "shard": 1,
+        "context": "The arbury lodge guesthouse is one of 32 options for you.",
+        "text": "Will it fit 8 people?",
+        "field": "guests",
+        "value": 8
+      }
+    ]
+  },
+  {
+    "pair": 11,
+    "direction": -1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 16. One-time linen fee per guest: 1. Service fee per night: 5. One-time booking fee: 3. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL1834.json/14",
+        "shard": 2,
+        "context": "Ok great, and how many people will I be booking for?",
+        "text": "There will be 8 of us.",
+        "field": "guests",
+        "value": 8
+      },
+      {
+        "id": "MUL1274.json/10",
+        "shard": 1,
+        "context": "I can book that for you as well, how many days are you staying?",
+        "text": "We need reservations for two nights please.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "PMUL2898.json/10",
+        "shard": 2,
+        "context": "I can help with that. How many people will be staying?",
+        "text": "There will be 4 people.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "SNG0755.json/6",
+        "shard": 2,
+        "context": "The Cambridge belfry is a hotel in the west that is cheap and has both free internet and wifi. Would you like to book this?",
+        "text": "That's fine. I'll need it for three nights starting on Sunday.",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "MUL1139.json/6",
+        "shard": 2,
+        "context": "I'm sorry, but the hotel isn't available for you request. Would you like to try another day or shorter stay?",
+        "text": "Can you try for 2 nights instead?",
+        "field": "nights",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "pair": 11,
+    "direction": 1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 16. One-time linen fee per guest: 1. Service fee per night: 5. One-time booking fee: 3. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL1834.json/14",
+        "shard": 2,
+        "context": "Ok great, and how many people will I be booking for?",
+        "text": "There will be 8 of us.",
+        "field": "guests",
+        "value": 8
+      },
+      {
+        "id": "MUL1274.json/10",
+        "shard": 1,
+        "context": "I can book that for you as well, how many days are you staying?",
+        "text": "We need reservations for two nights please.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "PMUL2898.json/10",
+        "shard": 2,
+        "context": "I can help with that. How many people will be staying?",
+        "text": "There will be 4 people.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "SNG0755.json/6",
+        "shard": 2,
+        "context": "The Cambridge belfry is a hotel in the west that is cheap and has both free internet and wifi. Would you like to book this?",
+        "text": "That's fine. I'll need it for three nights starting on Sunday.",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "PMUL4034.json/8",
+        "shard": 2,
+        "context": "Booking was successful, the total fee is 52.8 GBP payable at the station .Reference number is : 4CSMUT8M .what else do i do for you?",
+        "text": "Yes, I'd like to stay at The Lensfield Hotel once we get to town for 4 nights.",
+        "field": "nights",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "pair": 12,
+    "direction": -1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 17. One-time linen fee per guest: 6. Service fee per night: 6. One-time booking fee: 5. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL1028.json/4",
+        "shard": 1,
+        "context": "The only hotel that is in the east with free wifi is express by holiday inn cambridge. Would you like to go ahead and book a room?",
+        "text": "Yes, for two nights please.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "PMUL0441.json/2",
+        "shard": 2,
+        "context": "Yes Allenbell is located on 517a coldham lane in the east. Would you like me to book a room for you?",
+        "text": "book for me bed and breakfast for five people from tommorrow.",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "MUL2151.json/14",
+        "shard": 1,
+        "context": "The addres is 15-17 norman way, coldhams business park, cb13lh. When would you like to stay?",
+        "text": "I'd like you to book it for Wednesday night for 4 people.",
+        "field": "guests",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "pair": 12,
+    "direction": 1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 17. One-time linen fee per guest: 6. Service fee per night: 6. One-time booking fee: 5. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL1028.json/4",
+        "shard": 1,
+        "context": "The only hotel that is in the east with free wifi is express by holiday inn cambridge. Would you like to go ahead and book a room?",
+        "text": "Yes, for two nights please.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "PMUL0441.json/2",
+        "shard": 2,
+        "context": "Yes Allenbell is located on 517a coldham lane in the east. Would you like me to book a room for you?",
+        "text": "book for me bed and breakfast for five people from tommorrow.",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "MUL2193.json/8",
+        "shard": 1,
+        "context": "Sure, how many people will be staying, and did you want the booking for Wednesday, or Monday?",
+        "text": "I need it starting on Wednesday for 6 people.",
+        "field": "guests",
+        "value": 6
+      }
+    ]
+  },
+  {
+    "pair": 13,
+    "direction": -1,
+    "initial": "Guests: 4. Nights: 2. Room rate per guest per night: 17. One-time linen fee per guest: 1. Service fee per night: 6. One-time booking fee: 4. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL4636.json/6",
+        "shard": 2,
+        "context": "We do have guesthouses available. Is that okay?",
+        "text": "Yes if you can find a place for 5 people",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "SNG0840.json/12",
+        "shard": 1,
+        "context": "Yes, I tried Sunday but it isn't available. Can you shorten your stay at all?",
+        "text": "Yes, can you try it for 3 nights, please.",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "PMUL3785.json/4",
+        "shard": 2,
+        "context": "Okay, what day would you like me to make the reservation for and for how many people?",
+        "text": "Book it starting from Friday and it will be for 4 people and I'll also need the reference number. We also need to find a place to eat.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "MUL2060.json/18",
+        "shard": 2,
+        "context": "I'm sorry i was unable to book your table for 2 people for 2 days on sunday. Would you like another day?",
+        "text": "How about trying just for one night, instead?",
+        "field": "nights",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "pair": 13,
+    "direction": 1,
+    "initial": "Guests: 4. Nights: 2. Room rate per guest per night: 17. One-time linen fee per guest: 1. Service fee per night: 6. One-time booking fee: 4. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL4636.json/6",
+        "shard": 2,
+        "context": "We do have guesthouses available. Is that okay?",
+        "text": "Yes if you can find a place for 5 people",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "SNG0840.json/12",
+        "shard": 1,
+        "context": "Yes, I tried Sunday but it isn't available. Can you shorten your stay at all?",
+        "text": "Yes, can you try it for 3 nights, please.",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "PMUL3785.json/4",
+        "shard": 2,
+        "context": "Okay, what day would you like me to make the reservation for and for how many people?",
+        "text": "Book it starting from Friday and it will be for 4 people and I'll also need the reference number. We also need to find a place to eat.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "MUL2193.json/6",
+        "shard": 1,
+        "context": "The Acorn offers both.",
+        "text": "That sounds great. Can you book it for Wednesday for 5 nights?",
+        "field": "nights",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "pair": 14,
+    "direction": -1,
+    "initial": "Guests: 3. Nights: 3. Room rate per guest per night: 21. One-time linen fee per guest: 3. Service fee per night: 6. One-time booking fee: 4. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL0011.json/18",
+        "shard": 2,
+        "context": "Non of the hotels were available for 2 nights starting on Friday. Would you prefer another date or area.",
+        "text": "Can you book me a room for 1 night instead?",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "MUL2151.json/14",
+        "shard": 1,
+        "context": "The addres is 15-17 norman way, coldhams business park, cb13lh. When would you like to stay?",
+        "text": "I'd like you to book it for Wednesday night for 4 people.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "PMUL3521.json/8",
+        "shard": 2,
+        "context": "If price is not an issue, I recommend the expensive Huntingdon Marriott hotel. If you want something cheaper, I recommend the Cambridge Belfry.",
+        "text": "Can you book me a room at the Marriott for 3 nights starting Wednesday?",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "PMUL4636.json/6",
+        "shard": 2,
+        "context": "We do have guesthouses available. Is that okay?",
+        "text": "Yes if you can find a place for 5 people",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "MUL0744.json/14",
+        "shard": 1,
+        "context": "Your reservation is confirmed and the reference number is ##",
+        "text": "I'm sorry? Were you able to book the Express by Holiday Inn for 4 people?",
+        "field": "guests",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "pair": 14,
+    "direction": 1,
+    "initial": "Guests: 3. Nights: 3. Room rate per guest per night: 21. One-time linen fee per guest: 3. Service fee per night: 6. One-time booking fee: 4. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL0011.json/18",
+        "shard": 2,
+        "context": "Non of the hotels were available for 2 nights starting on Friday. Would you prefer another date or area.",
+        "text": "Can you book me a room for 1 night instead?",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "MUL2151.json/14",
+        "shard": 1,
+        "context": "The addres is 15-17 norman way, coldhams business park, cb13lh. When would you like to stay?",
+        "text": "I'd like you to book it for Wednesday night for 4 people.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "PMUL3521.json/8",
+        "shard": 2,
+        "context": "If price is not an issue, I recommend the expensive Huntingdon Marriott hotel. If you want something cheaper, I recommend the Cambridge Belfry.",
+        "text": "Can you book me a room at the Marriott for 3 nights starting Wednesday?",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "PMUL4636.json/6",
+        "shard": 2,
+        "context": "We do have guesthouses available. Is that okay?",
+        "text": "Yes if you can find a place for 5 people",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "PMUL1834.json/14",
+        "shard": 2,
+        "context": "Ok great, and how many people will I be booking for?",
+        "text": "There will be 8 of us.",
+        "field": "guests",
+        "value": 8
+      }
+    ]
+  },
+  {
+    "pair": 15,
+    "direction": -1,
+    "initial": "Guests: 3. Nights: 2. Room rate per guest per night: 29. One-time linen fee per guest: 5. Service fee per night: 5. One-time booking fee: 3. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL2193.json/8",
+        "shard": 1,
+        "context": "Sure, how many people will be staying, and did you want the booking for Wednesday, or Monday?",
+        "text": "I need it starting on Wednesday for 6 people.",
+        "field": "guests",
+        "value": 6
+      },
+      {
+        "id": "PMUL2898.json/8",
+        "shard": 2,
+        "context": "Sure thing, what nights will you be staying?",
+        "text": "3 nights starting on tuesday",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "PMUL1600.json/22",
+        "shard": 2,
+        "context": "I apologize, there was a problem with the system. That guesthouse is not available at this time. Is there a price range your trying to stay in?",
+        "text": "Let's just try booking the same hotel for 1 night please.",
+        "field": "nights",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "pair": 15,
+    "direction": 1,
+    "initial": "Guests: 3. Nights: 2. Room rate per guest per night: 29. One-time linen fee per guest: 5. Service fee per night: 5. One-time booking fee: 3. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL2193.json/8",
+        "shard": 1,
+        "context": "Sure, how many people will be staying, and did you want the booking for Wednesday, or Monday?",
+        "text": "I need it starting on Wednesday for 6 people.",
+        "field": "guests",
+        "value": 6
+      },
+      {
+        "id": "PMUL2898.json/8",
+        "shard": 2,
+        "context": "Sure thing, what nights will you be staying?",
+        "text": "3 nights starting on tuesday",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "MUL0671.json/14",
+        "shard": 1,
+        "context": "I'm very sorry I was unable to book at acorn guest house for 5 nights, would you like to try for a shorter stay?",
+        "text": "Yes, please try to book it for four nights instead.",
+        "field": "nights",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "pair": 16,
+    "direction": -1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 17. One-time linen fee per guest: 1. Service fee per night: 3. One-time booking fee: 7. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL1088.json/16",
+        "shard": 2,
+        "context": "Unfortunately the booking was not successful.",
+        "text": "What if we try two nights?",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "SNG0933.json/6",
+        "shard": 1,
+        "context": "How many people will be in your party and how long would you like to stay?",
+        "text": "There are 3 of us and we'll be arriving on Saturday.",
+        "field": "guests",
+        "value": 3
+      },
+      {
+        "id": "SNG0768.json/14",
+        "shard": 2,
+        "context": "No, I'm sorry. I am searching for a 4 star hotel in the centre for 2 nights on Saturday. Is that correct?",
+        "text": "I need the hotel for 3 nights starting on Saturday please.",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "PMUL2513.json/4",
+        "shard": 1,
+        "context": "I have 4 guesthouses available in the moderate price range. What part of town would you prefer?",
+        "text": "The area doesn't matter. I don't need internet and I need to book it for 1 person.",
+        "field": "guests",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "pair": 16,
+    "direction": 1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 17. One-time linen fee per guest: 1. Service fee per night: 3. One-time booking fee: 7. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL1088.json/16",
+        "shard": 2,
+        "context": "Unfortunately the booking was not successful.",
+        "text": "What if we try two nights?",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "SNG0933.json/6",
+        "shard": 1,
+        "context": "How many people will be in your party and how long would you like to stay?",
+        "text": "There are 3 of us and we'll be arriving on Saturday.",
+        "field": "guests",
+        "value": 3
+      },
+      {
+        "id": "SNG0768.json/14",
+        "shard": 2,
+        "context": "No, I'm sorry. I am searching for a 4 star hotel in the centre for 2 nights on Saturday. Is that correct?",
+        "text": "I need the hotel for 3 nights starting on Saturday please.",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "PMUL3785.json/4",
+        "shard": 2,
+        "context": "Okay, what day would you like me to make the reservation for and for how many people?",
+        "text": "Book it starting from Friday and it will be for 4 people and I'll also need the reference number. We also need to find a place to eat.",
+        "field": "guests",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "pair": 17,
+    "direction": -1,
+    "initial": "Guests: 3. Nights: 3. Room rate per guest per night: 12. One-time linen fee per guest: 1. Service fee per night: 7. One-time booking fee: 1. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL0090.json/4",
+        "shard": 1,
+        "context": "The arbury lodge guesthouse is one of 32 options for you.",
+        "text": "Will it fit 8 people?",
+        "field": "guests",
+        "value": 8
+      },
+      {
+        "id": "PMUL4636.json/8",
+        "shard": 2,
+        "context": "I can help! for how many days starting when?",
+        "text": "2 nights, starting on Wednesday please",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "SNG0888.json/4",
+        "shard": 1,
+        "context": "The Bridge Guest House is a 3 star guesthouse. It is in the south area. Would you like to book a room?",
+        "text": "Yes, please, for four people.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "SNG1042.json/10",
+        "shard": 1,
+        "context": "Sorry I tried alexander bed and breakfast but it seems that they have all booked out at for these days. Do you want to change to another place?",
+        "text": "well, can you maybe try it for 3 nights?",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "MUL0694.json/18",
+        "shard": 2,
+        "context": "I'm sorry, but there are none available on those days. Would you like to try a different day or number of nights?",
+        "text": "Ok, how about 1 night?",
+        "field": "nights",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "pair": 17,
+    "direction": 1,
+    "initial": "Guests: 3. Nights: 3. Room rate per guest per night: 12. One-time linen fee per guest: 1. Service fee per night: 7. One-time booking fee: 1. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL0090.json/4",
+        "shard": 1,
+        "context": "The arbury lodge guesthouse is one of 32 options for you.",
+        "text": "Will it fit 8 people?",
+        "field": "guests",
+        "value": 8
+      },
+      {
+        "id": "PMUL4636.json/8",
+        "shard": 2,
+        "context": "I can help! for how many days starting when?",
+        "text": "2 nights, starting on Wednesday please",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "SNG0888.json/4",
+        "shard": 1,
+        "context": "The Bridge Guest House is a 3 star guesthouse. It is in the south area. Would you like to book a room?",
+        "text": "Yes, please, for four people.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "SNG1042.json/10",
+        "shard": 1,
+        "context": "Sorry I tried alexander bed and breakfast but it seems that they have all booked out at for these days. Do you want to change to another place?",
+        "text": "well, can you maybe try it for 3 nights?",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "PMUL3785.json/2",
+        "shard": 2,
+        "context": "That is a great 3 star hotel. It is expensive, but beautiful. What would you like to know?",
+        "text": "i want to book it for 5 nights",
+        "field": "nights",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "pair": 18,
+    "direction": -1,
+    "initial": "Guests: 2. Nights: 2. Room rate per guest per night: 9. One-time linen fee per guest: 4. Service fee per night: 3. One-time booking fee: 6. All charges in dollars.",
+    "turns": [
+      {
+        "id": "SNG1016.json/4",
+        "shard": 2,
+        "context": "Booking was unfortunately unsuccessful. Can we try another day or a shorter stay?",
+        "text": "Can we try one night?",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "SNG0768.json/18",
+        "shard": 2,
+        "context": "I'm sorry, but the University Arms does not have anything available on Saturday for 3 people, for a 3 night stay. Would you like to try a different day?",
+        "text": "I am so sorry. Could you just change the number of people in my party to 5 and try again?",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "SNG0755.json/14",
+        "shard": 2,
+        "context": "I will give it a try again. How many people will there be?",
+        "text": "there are 4 of us.",
+        "field": "guests",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "pair": 18,
+    "direction": 1,
+    "initial": "Guests: 2. Nights: 2. Room rate per guest per night: 9. One-time linen fee per guest: 4. Service fee per night: 3. One-time booking fee: 6. All charges in dollars.",
+    "turns": [
+      {
+        "id": "SNG1016.json/4",
+        "shard": 2,
+        "context": "Booking was unfortunately unsuccessful. Can we try another day or a shorter stay?",
+        "text": "Can we try one night?",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "SNG0768.json/18",
+        "shard": 2,
+        "context": "I'm sorry, but the University Arms does not have anything available on Saturday for 3 people, for a 3 night stay. Would you like to try a different day?",
+        "text": "I am so sorry. Could you just change the number of people in my party to 5 and try again?",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "SNG1012.json/4",
+        "shard": 2,
+        "context": "Bridge Gue House, Hamilton Lodge, and Hobsons House are all available if you'd like one of those?",
+        "text": "Please book the Hamilton Lodge, for 6 people.",
+        "field": "guests",
+        "value": 6
+      }
+    ]
+  },
+  {
+    "pair": 19,
+    "direction": -1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 30. One-time linen fee per guest: 1. Service fee per night: 6. One-time booking fee: 8. All charges in dollars.",
+    "turns": [
+      {
+        "id": "SNG0840.json/8",
+        "shard": 1,
+        "context": "How many are in your party?",
+        "text": "3 people. Can I get the reference number please?",
+        "field": "guests",
+        "value": 3
+      },
+      {
+        "id": "PMUL4636.json/8",
+        "shard": 2,
+        "context": "I can help! for how many days starting when?",
+        "text": "2 nights, starting on Wednesday please",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "PMUL0441.json/2",
+        "shard": 2,
+        "context": "Yes Allenbell is located on 517a coldham lane in the east. Would you like me to book a room for you?",
+        "text": "book for me bed and breakfast for five people from tommorrow.",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "SNG01551.json/6",
+        "shard": 2,
+        "context": "Unfortunately, I couldn't find anything with 5 stars.",
+        "text": "try out 1 night then",
+        "field": "nights",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "pair": 19,
+    "direction": 1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 30. One-time linen fee per guest: 1. Service fee per night: 6. One-time booking fee: 8. All charges in dollars.",
+    "turns": [
+      {
+        "id": "SNG0840.json/8",
+        "shard": 1,
+        "context": "How many are in your party?",
+        "text": "3 people. Can I get the reference number please?",
+        "field": "guests",
+        "value": 3
+      },
+      {
+        "id": "PMUL4636.json/8",
+        "shard": 2,
+        "context": "I can help! for how many days starting when?",
+        "text": "2 nights, starting on Wednesday please",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "PMUL0441.json/2",
+        "shard": 2,
+        "context": "Yes Allenbell is located on 517a coldham lane in the east. Would you like me to book a room for you?",
+        "text": "book for me bed and breakfast for five people from tommorrow.",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "MUL0744.json/12",
+        "shard": 1,
+        "context": "Express by Holiday Inn Cambridge is an expensive hotel located in the east, and it includes parking. Would you like me to book a stay there for you?",
+        "text": "I want to book this hotel for the same group of people and 3 nights starting from Sunday. I'll need a reference number please.",
+        "field": "nights",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "pair": 20,
+    "direction": -1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 28. One-time linen fee per guest: 1. Service fee per night: 6. One-time booking fee: 5. All charges in dollars.",
+    "turns": [
+      {
+        "id": "SNG0888.json/8",
+        "shard": 1,
+        "context": "I am afraid that booking is unsuccessful. Would you like a different day or amount of days?",
+        "text": "How about 1 night? Would that work?",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "PMUL4636.json/6",
+        "shard": 2,
+        "context": "We do have guesthouses available. Is that okay?",
+        "text": "Yes if you can find a place for 5 people",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "SNG0933.json/8",
+        "shard": 1,
+        "context": "And for how many days?",
+        "text": "It will be for two nights.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "PMUL2898.json/10",
+        "shard": 2,
+        "context": "I can help with that. How many people will be staying?",
+        "text": "There will be 4 people.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "SNG0840.json/8",
+        "shard": 1,
+        "context": "How many are in your party?",
+        "text": "3 people. Can I get the reference number please?",
+        "field": "guests",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "pair": 20,
+    "direction": 1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 28. One-time linen fee per guest: 1. Service fee per night: 6. One-time booking fee: 5. All charges in dollars.",
+    "turns": [
+      {
+        "id": "SNG0888.json/8",
+        "shard": 1,
+        "context": "I am afraid that booking is unsuccessful. Would you like a different day or amount of days?",
+        "text": "How about 1 night? Would that work?",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "PMUL4636.json/6",
+        "shard": 2,
+        "context": "We do have guesthouses available. Is that okay?",
+        "text": "Yes if you can find a place for 5 people",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "SNG0933.json/8",
+        "shard": 1,
+        "context": "And for how many days?",
+        "text": "It will be for two nights.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "PMUL2898.json/10",
+        "shard": 2,
+        "context": "I can help with that. How many people will be staying?",
+        "text": "There will be 4 people.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "PMUL1834.json/14",
+        "shard": 2,
+        "context": "Ok great, and how many people will I be booking for?",
+        "text": "There will be 8 of us.",
+        "field": "guests",
+        "value": 8
+      }
+    ]
+  },
+  {
+    "pair": 21,
+    "direction": -1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 27. One-time linen fee per guest: 3. Service fee per night: 7. One-time booking fee: 9. All charges in dollars.",
+    "turns": [
+      {
+        "id": "SNG0768.json/18",
+        "shard": 2,
+        "context": "I'm sorry, but the University Arms does not have anything available on Saturday for 3 people, for a 3 night stay. Would you like to try a different day?",
+        "text": "I am so sorry. Could you just change the number of people in my party to 5 and try again?",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "MUL2254.json/2",
+        "shard": 2,
+        "context": "I have the A and B Guesthouse in the east.",
+        "text": "Please book it for me for 2 nights",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "SNG0933.json/10",
+        "shard": 1,
+        "context": "I'm sorry but there is no availability for 2 nights starting on Saturday. Is there another day that works for you? Perhaps a different hotel?",
+        "text": "Can you try for just 1 night then?",
+        "field": "nights",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "pair": 21,
+    "direction": 1,
+    "initial": "Guests: 4. Nights: 3. Room rate per guest per night: 27. One-time linen fee per guest: 3. Service fee per night: 7. One-time booking fee: 9. All charges in dollars.",
+    "turns": [
+      {
+        "id": "SNG0768.json/18",
+        "shard": 2,
+        "context": "I'm sorry, but the University Arms does not have anything available on Saturday for 3 people, for a 3 night stay. Would you like to try a different day?",
+        "text": "I am so sorry. Could you just change the number of people in my party to 5 and try again?",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "MUL2254.json/2",
+        "shard": 2,
+        "context": "I have the A and B Guesthouse in the east.",
+        "text": "Please book it for me for 2 nights",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "PMUL2898.json/8",
+        "shard": 2,
+        "context": "Sure thing, what nights will you be staying?",
+        "text": "3 nights starting on tuesday",
+        "field": "nights",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "pair": 22,
+    "direction": -1,
+    "initial": "Guests: 2. Nights: 2. Room rate per guest per night: 18. One-time linen fee per guest: 5. Service fee per night: 7. One-time booking fee: 4. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL1212.json/12",
+        "shard": 1,
+        "context": "Unfortunately that is unavailable. Could you book another day or have a shorter stay?",
+        "text": "Do they have availability for a 1 night stay starting Saturday?",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "SNG0933.json/6",
+        "shard": 1,
+        "context": "How many people will be in your party and how long would you like to stay?",
+        "text": "There are 3 of us and we'll be arriving on Saturday.",
+        "field": "guests",
+        "value": 3
+      },
+      {
+        "id": "SNG0755.json/6",
+        "shard": 2,
+        "context": "The Cambridge belfry is a hotel in the west that is cheap and has both free internet and wifi. Would you like to book this?",
+        "text": "That's fine. I'll need it for three nights starting on Sunday.",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "PMUL3521.json/10",
+        "shard": 2,
+        "context": "How many people do you need a room for?",
+        "text": "1 person please.",
+        "field": "guests",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "pair": 22,
+    "direction": 1,
+    "initial": "Guests: 2. Nights: 2. Room rate per guest per night: 18. One-time linen fee per guest: 5. Service fee per night: 7. One-time booking fee: 4. All charges in dollars.",
+    "turns": [
+      {
+        "id": "MUL1212.json/12",
+        "shard": 1,
+        "context": "Unfortunately that is unavailable. Could you book another day or have a shorter stay?",
+        "text": "Do they have availability for a 1 night stay starting Saturday?",
+        "field": "nights",
+        "value": 1
+      },
+      {
+        "id": "SNG0933.json/6",
+        "shard": 1,
+        "context": "How many people will be in your party and how long would you like to stay?",
+        "text": "There are 3 of us and we'll be arriving on Saturday.",
+        "field": "guests",
+        "value": 3
+      },
+      {
+        "id": "SNG0755.json/6",
+        "shard": 2,
+        "context": "The Cambridge belfry is a hotel in the west that is cheap and has both free internet and wifi. Would you like to book this?",
+        "text": "That's fine. I'll need it for three nights starting on Sunday.",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "MUL2151.json/14",
+        "shard": 1,
+        "context": "The addres is 15-17 norman way, coldhams business park, cb13lh. When would you like to stay?",
+        "text": "I'd like you to book it for Wednesday night for 4 people.",
+        "field": "guests",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "pair": 23,
+    "direction": -1,
+    "initial": "Guests: 4. Nights: 2. Room rate per guest per night: 27. One-time linen fee per guest: 4. Service fee per night: 5. One-time booking fee: 6. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL0441.json/2",
+        "shard": 2,
+        "context": "Yes Allenbell is located on 517a coldham lane in the east. Would you like me to book a room for you?",
+        "text": "book for me bed and breakfast for five people from tommorrow.",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "SNG01797.json/4",
+        "shard": 2,
+        "context": "How many days will you be staying?",
+        "text": "I'll be staying for 3 nights starting on tuesday.",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "PMUL3785.json/4",
+        "shard": 2,
+        "context": "Okay, what day would you like me to make the reservation for and for how many people?",
+        "text": "Book it starting from Friday and it will be for 4 people and I'll also need the reference number. We also need to find a place to eat.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "SNG0908.json/6",
+        "shard": 2,
+        "context": "I am afraid that was unsuccessful. Would like to book another day or a shorter stay?",
+        "text": "Can we try 2 nights instead then? I'll need the reference number as well.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "MUL2630.json/10",
+        "shard": 2,
+        "context": "I apologize but I was not able to book the room for your requested time frame. Would you like to try another night or a shorter stay?",
+        "text": "Can you try for one night and see if that works?",
+        "field": "nights",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "pair": 23,
+    "direction": 1,
+    "initial": "Guests: 4. Nights: 2. Room rate per guest per night: 27. One-time linen fee per guest: 4. Service fee per night: 5. One-time booking fee: 6. All charges in dollars.",
+    "turns": [
+      {
+        "id": "PMUL0441.json/2",
+        "shard": 2,
+        "context": "Yes Allenbell is located on 517a coldham lane in the east. Would you like me to book a room for you?",
+        "text": "book for me bed and breakfast for five people from tommorrow.",
+        "field": "guests",
+        "value": 5
+      },
+      {
+        "id": "SNG01797.json/4",
+        "shard": 2,
+        "context": "How many days will you be staying?",
+        "text": "I'll be staying for 3 nights starting on tuesday.",
+        "field": "nights",
+        "value": 3
+      },
+      {
+        "id": "PMUL3785.json/4",
+        "shard": 2,
+        "context": "Okay, what day would you like me to make the reservation for and for how many people?",
+        "text": "Book it starting from Friday and it will be for 4 people and I'll also need the reference number. We also need to find a place to eat.",
+        "field": "guests",
+        "value": 4
+      },
+      {
+        "id": "SNG0908.json/6",
+        "shard": 2,
+        "context": "I am afraid that was unsuccessful. Would like to book another day or a shorter stay?",
+        "text": "Can we try 2 nights instead then? I'll need the reference number as well.",
+        "field": "nights",
+        "value": 2
+      },
+      {
+        "id": "MUL2106.json/20",
+        "shard": 1,
+        "context": "I am unsuccessful with those days. Would you like to try a different number of days or another day?",
+        "text": "Can we try three nights?",
+        "field": "nights",
+        "value": 3
+      }
+    ]
+  }
+]

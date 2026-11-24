@@ -1,0 +1,30 @@
+{
+  "canonical": true,
+  "bilinear": true,
+  "widths": [
+    5,
+    7,
+    12
+  ],
+  "tasks_per_cell": 300,
+  "evaluation_seed": 940271,
+  "fit_seeds": [
+    42,
+    43,
+    44
+  ],
+  "extra_ranges": {
+    "unseen_two_digit": [
+      60,
+      99
+    ],
+    "unseen_three_digit": [
+      100,
+      999
+    ]
+  },
+  "script_sha256": "70b84de19cb4ce0535b131bde2f96d13e13cc7e96515d6bf8d9c888c024f2447",
+  "features_sha256": "2a2b040721f1a0d7db7c8884ddd3d9b9de26a6a93861d1b6a3545e8b7665c82a",
+  "development_sha256": "6ad2c15685c34e75cb23503a06874c8eb7f6ac65e6963a6258d9a6181aae6186",
+  "primary": "Whole integer exact match for local and rebuild, reported per cell. Same formal items for each training seed. No test-set selection."
+}

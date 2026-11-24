@@ -1,0 +1,9 @@
+{
+  "source": "P2-3 cuda.jsonl shared subset, same 36 source lines, widths, starting workspace and integer targets",
+  "fit_seed": 42,
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU; CPU fp32 four threads",
+  "precision": "Original path uses bf16 input embeddings + FP32 blocks, LoRA and projection. Reduced conditions use torch autocast CUDA fp16/bf16 around that same encoder. Scalar fitting and graph propagation remain float64.",
+  "dynamic": "Encode digits of the edited literal together at variable batch size 1..3 and native token length.",
+  "fixed": "96-token right padding, fill batch to eight with s = 0, preserving actual masks. Archive keeps old readout. Matched recalibrates using ten labeled canonical digit representations from fixed 8x96, and keeps place/operation coefficients and initial workspace frozen.",
+  "source_line": "1-based formal_rows_42.jsonl; 0-based node indexes; exact_nodes ordered as graph schedule."
+}

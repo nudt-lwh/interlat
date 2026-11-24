@@ -1,0 +1,10 @@
+{
+  "encoder": "Llama-3.2-1B-Instruct",
+  "encoder_checkpoint": "llama_s2_mul/ckpt_final.pt",
+  "fit_seed": 42,
+  "pool": "masked mean; arithmetic mean across two 256-dimensional projection slots",
+  "qwen_baseline_correct": 10800,
+  "test_file": "formal_rows_42.jsonl",
+  "test_sha256": "398cf7c462cef0d63b0c2d99193f2da85978192587f1d89994f013f914575f89",
+  "features_sha256": "fb4e1ec6b535191a10bf3eb6babe9b41d5f823dae793d6fa36e2fa545bceab3a"
+}

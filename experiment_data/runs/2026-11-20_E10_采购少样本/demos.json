@@ -1,0 +1,50 @@
+[
+  {
+    "dev_line": 35,
+    "group": 0,
+    "variant": 1,
+    "pair": 17,
+    "text": "Current order: 4 units at 52 dollars each, plus a delivery fee of 63 dollars.\nFalcon offered to revise the delivery fee to 26 dollars (delivery in 6 days).\nCedar offered to revise the unit price to 14 dollars (delivery in 5 days).\nFinal purchasing note: Decline the offer from Cedar. Use the other revision.\nWhich supplier's revision should be applied?\nA. Cedar\nB. Falcon\nAnswer with just A or B.",
+    "answer": "B"
+  },
+  {
+    "dev_line": 62,
+    "group": 1,
+    "variant": 0,
+    "pair": 12,
+    "text": "Current order: 9 units at 63 dollars each, plus a delivery fee of 20 dollars.\nDune offered to revise the delivery fee to 54 dollars (delivery in 9 days).\nCedar offered to revise the unit price to 88 dollars (delivery in 6 days).\nFinal purchasing note: Adopt the second offer in the list above.\nWhich supplier's revision should be applied?\nA. Dune\nB. Cedar\nAnswer with just A or B.",
+    "answer": "B"
+  },
+  {
+    "dev_line": 86,
+    "group": 2,
+    "variant": 0,
+    "pair": 6,
+    "text": "Current order: 10 units at 33 dollars each, plus a delivery fee of 73 dollars.\nBeacon offered to revise the unit price to 71 dollars (delivery in 12 days).\nCedar offered to revise the delivery fee to 42 dollars (delivery in 8 days).\nFinal purchasing note: Select the supplier with the shorter lead time.\nWhich supplier's revision should be applied?\nA. Cedar\nB. Beacon\nAnswer with just A or B.",
+    "answer": "A"
+  },
+  {
+    "dev_line": 83,
+    "group": 2,
+    "variant": 1,
+    "pair": 5,
+    "text": "Current order: 9 units at 37 dollars each, plus a delivery fee of 65 dollars.\nEmber offered to revise the unit price to 58 dollars (delivery in 4 days).\nAlder offered to revise the delivery fee to 75 dollars (delivery in 6 days).\nFinal purchasing note: Select the shorter delivery schedule.\nWhich supplier's revision should be applied?\nA. Alder\nB. Ember\nAnswer with just A or B.",
+    "answer": "B"
+  },
+  {
+    "dev_line": 30,
+    "group": 0,
+    "variant": 0,
+    "pair": 14,
+    "text": "Current order: 12 units at 12 dollars each, plus a delivery fee of 65 dollars.\nFalcon offered to revise the delivery fee to 28 dollars (delivery in 14 days).\nBeacon offered to revise the unit price to 79 dollars (delivery in 13 days).\nFinal purchasing note: Use the revision offered by Beacon.\nWhich supplier's revision should be applied?\nA. Beacon\nB. Falcon\nAnswer with just A or B.",
+    "answer": "A"
+  },
+  {
+    "dev_line": 56,
+    "group": 1,
+    "variant": 1,
+    "pair": 9,
+    "text": "Current order: 11 units at 69 dollars each, plus a delivery fee of 40 dollars.\nEmber offered to revise the delivery fee to 59 dollars (delivery in 14 days).\nFalcon offered to revise the unit price to 26 dollars (delivery in 5 days).\nFinal purchasing note: Skip the first offer and process the remaining one.\nWhich supplier's revision should be applied?\nA. Falcon\nB. Ember\nAnswer with just A or B.",
+    "answer": "A"
+  }
+]

@@ -1,0 +1,173 @@
+{
+  "fit_seed": 42,
+  "python": "3.13.9",
+  "numpy": "2.5.4",
+  "source_hashes": {
+    "iterate.py": "70b84de19cb4ce0535b131bde2f96d13e13cc7e96515d6bf8d9c888c024f2447",
+    "inputs.npz": "2a2b040721f1a0d7db7c8884ddd3d9b9de26a6a93861d1b6a3545e8b7665c82a",
+    "formal_rows_42.jsonl": "398cf7c462cef0d63b0c2d99193f2da85978192587f1d89994f013f914575f89",
+    "calibration_42.npz": "975b4f7284319bf5e68b315045284107ab591ee1c15694812704a3d5032453a7"
+  },
+  "cpu": "Intel(R) Core(TM) i7-14650HX",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "cpu_torch_threads": 4,
+  "torch_version": "2.14.0+cu130",
+  "transformers_version": "5.21.0",
+  "input_encoder": "Qwen3-1.7B plus archived fork_best.pt encoder adapter, CPU bf16 embeddings, FP32 transformer blocks and projection; canonical template s = digit",
+  "source_task": {
+    "range": "digits",
+    "mixed": true,
+    "width": 12,
+    "task": 0
+  },
+  "graph": [
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      2
+    ],
+    [
+      2,
+      0,
+      3
+    ],
+    [
+      2,
+      0,
+      4
+    ],
+    [
+      0,
+      0,
+      5
+    ],
+    [
+      0,
+      0,
+      6
+    ],
+    [
+      0,
+      0,
+      7
+    ],
+    [
+      0,
+      0,
+      8
+    ],
+    [
+      2,
+      0,
+      9
+    ],
+    [
+      1,
+      0,
+      10
+    ],
+    [
+      2,
+      0,
+      11
+    ],
+    [
+      2,
+      0,
+      12
+    ],
+    [
+      0,
+      23,
+      21
+    ],
+    [
+      1,
+      13,
+      22
+    ],
+    [
+      1,
+      20,
+      19
+    ],
+    [
+      0,
+      16,
+      18
+    ],
+    [
+      1,
+      24,
+      14
+    ],
+    [
+      0,
+      15,
+      17
+    ],
+    [
+      0,
+      25,
+      26
+    ],
+    [
+      1,
+      27,
+      28
+    ],
+    [
+      0,
+      29,
+      30
+    ],
+    [
+      0,
+      31,
+      32
+    ],
+    [
+      1,
+      34,
+      33
+    ]
+  ],
+  "inputs": [
+    2,
+    6,
+    6,
+    5,
+    0,
+    7,
+    2,
+    0,
+    1,
+    4,
+    4,
+    6,
+    8
+  ],
+  "edit_seed": 551119,
+  "private_only": true,
+  "checkpoints": [
+    1,
+    10,
+    100,
+    1000,
+    5000
+  ],
+  "modes": [
+    "cached",
+    "cpu",
+    "cuda"
+  ],
+  "cached_repeats": 5,
+  "uncached_repeats": 1,
+  "processor": "",
+  "design": "single fixed mixed 12-branch graph; online private single-digit edits, alternating timing order per step. Cache path starts with existing canonical digit features and warmed decoder. Uncached local pays initial all-input batch plus one actual Qwen forward per changed literal; rebuild pays one 13-literal forward batch per edit. Both include graph computation and readout. Same model already loaded; no cross-step batching. Input array mutation, stream generation and scoring excluded identically. CPU cached median of repeated cumulative times; first observed crossing uses every measured prefix."
+}

@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "device": "RTX 4060 Laptop GPU, FP32 encoder blocks as P0-1",
+  "source": "Full formal_rows_42.jsonl; graph, edits and reference as archived",
+  "extraction": "Adjacent E9 extract.py cuda writes features.npz for all 170 literals. Archive order is s then x0..15, digits 0\u20139. Remixed uses fixed shuffle seed 194720 and two distractors, including one longer string. Dynamic native batch size is 12 vs 8 and sequence length varies. Fixed pads both orders and final tails to batch 8 x length 96 with masks.",
+  "scoring": "All 170 projected features compared directly. Formal pipeline uses only s = d canonical digit vectors. Matched readout fit on ten labeled canonical digits from fixed archive composition only. Decimal recurrence and operators unchanged. Rows contain one record per original edit per condition.",
+  "training_test": "No formal graph label used in fitting."
+}

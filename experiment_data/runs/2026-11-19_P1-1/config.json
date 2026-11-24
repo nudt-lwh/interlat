@@ -1,0 +1,28 @@
+{
+  "seed": 194861,
+  "candidate_fit_seed": 42,
+  "source": "MultiWOZ 2.2, official test split",
+  "source_urls": [
+    "https://api.github.com/repos/budzianowski/multiwoz/git/blobs/fd420005cc9dc259892f541b001d9d48608bd38d",
+    "https://api.github.com/repos/budzianowski/multiwoz/git/blobs/8ce97bc17acc3d1105d92d8d936520b8c93892ba"
+  ],
+  "source_git_blobs": [
+    "fd420005cc9dc259892f541b001d9d48608bd38d",
+    "8ce97bc17acc3d1105d92d8d936520b8c93892ba"
+  ],
+  "units": "24 base bookings, two paired branches from identical prefix per booking, 8 base bookings at each of lengths 3,4,5",
+  "selection": "Exactly one changed hotel size or duration slot, exactly one number (Arabic numeral or zero through ten) equal to annotated value. Manual check of texts before inference excluded a spurious 3-star annotation. Pool reused with least-used-first selection and no dialogue repeated within a pair except the shared prefix.",
+  "inputs": "Verbatim current customer turn and preceding clerk turn, with project-created semistructured initial bill and explicit tariff. Human utterances recombined across independent original dialogues. Prefix shared between paired branches. Field labels and numeric annotations never supplied to predictors.",
+  "parser": "Domain lexical cues, falling back to preceding clerk turn. Ambiguous or unknown leaves current state unchanged.",
+  "pricing": "guests*nights*room_rate + guests*linen + nights*service + booking_fee",
+  "direct_model": "Qwen3-1.7B bfloat16; zero-shot greedy full-prefix generation, thinking disabled, maximum 16 output tokens. Strict integer answer with optional currency adornments.",
+  "timing": "Per item after initialization, wall clock including context formatting, tokenization, generate, output decoding and CUDA synchronization for direct. CPU includes input parsing, update and answer, with initial preparation timed separately; CPU candidate has precomputed canonical digit features. First warm generation excluded. Batch size one.",
+  "interpretation": "Measures replay on a 2-editable-field billing layer. Source also includes initial requests and availability questions, interpreted as amendments to the current bill. This is not an end-to-end native dialogue benchmark.",
+  "locked_sha256": {
+    "run.py": "818cc1d4c885130d66d6f019405bebb37bd5d478b187a957336aa88e1b932592",
+    "cases.json": "b5728b75e7fc702d8733d0bf4d505e0b2de801c7a17260711e56028f1ddeed0e",
+    "exclusions.json": "9691955796859102895bd0d0a74a7c49a3fc41ab8c41b04df1fd58d2a97b8f88",
+    "../2026-11-19_方法迭代/inputs.npz": "2a2b040721f1a0d7db7c8884ddd3d9b9de26a6a93861d1b6a3545e8b7665c82a",
+    "../2026-11-19_方法迭代/iterate.py": "70b84de19cb4ce0535b131bde2f96d13e13cc7e96515d6bf8d9c888c024f2447"
+  }
+}
