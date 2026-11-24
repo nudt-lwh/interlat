@@ -1,14 +1,4 @@
-"""显式 CoT 对照训练（实验03/04 的公平对照）。
-
-同一骨干 Qwen3-1.7B、同一 LoRA 配置、同一数据划分；输入为任务文本，
-目标为符号参考器生成的逐步计算轨迹＋最终答案（教师轨迹来自可执行真值，
-与 InterLat 的状态监督同源，保证公平）。
-
-用法：
-  python -m interlat.training.train_cot --data experiment_data/runs/exp03_formal_data \
-      --model experiment_data/artifacts/Qwen3-1.7B --out experiment_data/runs/exp03_cot_5090 \
-      --epochs 2 --micro-batch 16 --grad-accum 4
-"""
+"""Train the chain-of-thought baseline on symbolic traces and final answers."""
 from __future__ import annotations
 
 import argparse
@@ -24,7 +14,7 @@ from ..data.generator import FAMILIES
 
 
 def cot_text(sample: dict, variant: str) -> tuple[str, str]:
-    """从参考状态重建逐步计算轨迹（算子语义→自然语言算式）。"""
+    """Render the reference calculations and final answer for a task variant."""
     fam, ent = sample["structure_family"], sample["entity"]
     spec = FAMILIES[fam]
     ref = sample["reference"]
@@ -36,14 +26,14 @@ def cot_text(sample: dict, variant: str) -> tuple[str, str]:
         states, answers = ref["single"][i]["states"], ref["single"][i]["answers"]
         e = sample["edits"][i]
         name = e["target"].split(".", 1)[1]
-        prefix = sample["task_text"] + f" 条件更新：{name} 改为 {e['value']}。"
+        prefix = sample["task_text"] + f" Update: {name} changes to {e['value']}."
     else:
         states, answers = ref["combo_forward"]["states"], ref["combo_forward"]["answers"]
         parts = []
         for e in sample["edits"][:2]:
             name = e["target"].split(".", 1)[1]
-            parts.append(f"{name} 改为 {e['value']}")
-        prefix = sample["task_text"] + " 条件更新：" + "，".join(parts) + "。"
+            parts.append(f"{name} changes to {e['value']}")
+        prefix = sample["task_text"] + " Update: " + ", ".join(parts) + "."
 
     lines = []
     sym = {"add": "+", "sub": "-", "mul": "*", "floordiv": "//",
@@ -61,8 +51,8 @@ def cot_text(sample: dict, variant: str) -> tuple[str, str]:
     ans = answers[qname]
     ans_str = ", ".join("true" if v is True else "false" if v is False else str(v)
                         for v in ans)
-    target = "\n".join(lines) + f"\n答案: {ans_str}"
-    return prefix + "\n请逐步计算并给出答案。\n", target
+    target = "\n".join(lines) + f"\nAnswer: {ans_str}"
+    return prefix + "\nCalculate step by step and give the answer.\n", target
 
 
 def save_trainable(model, path: str, step: int) -> None:
@@ -152,7 +142,7 @@ def main() -> None:
                                      skip_special_tokens=True)
             for txt, (_, t) in zip(texts, recs):
                 tot += 1
-                truth = t.split("答案: ")[-1].strip()
+                truth = t.split("Answer: ")[-1].strip()
                 if truth in txt:
                     correct += 1
         model.train()

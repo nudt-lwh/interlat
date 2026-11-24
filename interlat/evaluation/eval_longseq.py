@@ -1,11 +1,4 @@
-"""长序列编辑评估：连续 3/4/5 次编辑后读取，对照符号真值。
-
-训练仅单编辑；本测试检验工作空间在多次连续编辑下是否仍正确、
-无关节点是否保持。真值由符号参考器对同一编辑序列计算。
-
-用法：python -m interlat.evaluation.eval_longseq --model <骨干> --ckpt <ckpt> \
-    --data <dir> --out <dir> --limit 150 --lengths 3,4,5
-"""
+"""Evaluate sequences of edits against the symbolic reference."""
 from __future__ import annotations
 
 import argparse

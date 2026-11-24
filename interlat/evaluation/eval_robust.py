@@ -1,11 +1,4 @@
-"""P1-2 鲁棒性审计：实体/变量重命名、输入顺序、模板改写（不改图、不改值）。
-
-对照原始 test，报告各扰动下准确率/路线一致率/保持率的下降。
-训练未做这些增广，预期可能显著下降（诚实捷径风险）。
-
-用法：python -m interlat.evaluation.eval_robust --model <骨干> --ckpt <ckpt> \
-   --data <dir> --out <dir> --limit 200
-"""
+"""Measure sensitivity to renamed variables, reordered inputs and paraphrases."""
 from __future__ import annotations
 
 import argparse

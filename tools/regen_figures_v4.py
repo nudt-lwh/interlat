@@ -7,9 +7,9 @@ Outputs (vector PDF, SVG and PNG):
   fig06_procurement.png         - procurement paired-instruction choices
 
 Truth sources:
-  runs/2026-11-19_方法迭代/{diagnosis,probe,development,verified,controls,edit_timing}.json
-  runs/2026-11-19_云实验/belief_summary.json
-  runs/2026-11-19_方法迭代/procurement_formal_grounded.jsonl
+  runs/arithmetic_workspace/{diagnosis,probe,development,verified,controls,edit_timing}.json
+  runs/neural_baselines/belief_summary.json
+  runs/arithmetic_workspace/procurement_formal_grounded.jsonl
 """
 from __future__ import annotations
 

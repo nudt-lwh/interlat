@@ -1,12 +1,4 @@
-"""InterLat 训练脚本（实验03/04）。
-
-用法（本地冒烟）：
-  python -m interlat.training.train --data experiment_data/runs/exp02_generator_validation \
-      --model experiment_data/artifacts/Qwen3-1.7B --out experiment_data/runs/exp03_smoke \
-      --variants original --limit 400 --epochs 1 --micro-batch 4
-
-云正式训练加 --grad-accum 8 --epochs 3 等；checkpoint 与指标存 out 目录。
-"""
+"""Train the workspace model and save its trainable parameters."""
 from __future__ import annotations
 
 import argparse
@@ -23,7 +15,7 @@ from . import collate as C
 
 
 def save_trainable(model, path: str, step: int) -> None:
-    """只保存可训练参数（LoRA＋投影＋执行器＋状态头），避免3.4GB骨干重复落盘。"""
+    """Save trainable parameters without duplicating the frozen backbone."""
     sd = {k: v for k, v in model.state_dict().items()
           if ("lora_" in k) or k.startswith(("enc_proj", "read_proj", "executor",
                                              "state_head", "exec_proj", "exec_out"))}
@@ -41,11 +33,11 @@ def load_trainable(model, path: str, device) -> int:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--data", required=True, help="含 train.jsonl/dev.jsonl 的目录")
+    ap.add_argument("--data", required=True, help="Directory containing train.jsonl and dev.jsonl")
     ap.add_argument("--model", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--variants", default="original",
-                    help="逗号分隔：original,single0,single1,combo")
+                    help="Comma-separated variants: original,single0,single1,combo")
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--epochs", type=int, default=1)
     ap.add_argument("--micro-batch", type=int, default=4)
@@ -53,20 +45,20 @@ def main() -> None:
     ap.add_argument("--lr", type=float, default=2e-4)
     ap.add_argument("--lambda-s", type=float, default=0.5)
     ap.add_argument("--lambda-aux", type=float, default=0.0,
-                    help="状态读出→答案辅助路径权重（强监督）")
+                    help="Weight of the auxiliary state-readout answer loss")
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--lora-r", type=int, default=16)
     ap.add_argument("--eval-every", type=int, default=200)
     ap.add_argument("--max-steps", type=int, default=None)
-    ap.add_argument("--resume", default=None, help="从检查点续训（实验04编辑训练）")
+    ap.add_argument("--resume", default=None, help="Resume training from a checkpoint")
     ap.add_argument("--executor", default="small", choices=["small", "llm"],
-                    help="Execute算子实现：small=4层小Transformer；llm=骨干自身计算")
+                    help="Execution backend: small transformer or language-model backbone")
     ap.add_argument("--node-dim", type=int, default=256,
-                    help="节点状态维度；设为骨干隐层宽度即v5对齐表示空间")
+                    help="Node-state dimension; use the backbone hidden width to align the two spaces")
     ap.add_argument("--node-tokens", type=int, default=2,
-                    help="节点状态token数：2=池化(单位数)，5=逐位(多位数0-999)")
+                    help="State tokens per node: 2 for pooled digits, 5 for digit-aligned values up to 999")
     ap.add_argument("--exec-layers", type=int, default=4,
-                    help="执行器Transformer层数（加深攻多位数）")
+                    help="Number of transformer layers in the executor")
     args = ap.parse_args()
 
     os.makedirs(args.out, exist_ok=True)
@@ -155,7 +147,7 @@ def main() -> None:
     log = []
     step = 0
     t_start = time.time()
-    # cosine 学习率衰减（稳定后期收敛，修复多节点链训练振荡）
+    # Use cosine learning-rate decay.
     total_steps = args.epochs * max(1, len(train_recs) // args.micro_batch)
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=total_steps, eta_min=args.lr * 0.1)
     model.train()

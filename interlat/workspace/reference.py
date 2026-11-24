@@ -1,8 +1,4 @@
-"""符号参考器：只用于生成训练目标与评分真值。
-
-推理时神经 Execute 接收父节点连续状态，不调用本模块（方案 v1.0 明确：
-否则退化为普通符号程序执行）。
-"""
+"""Compute reference values for supervision and evaluation."""
 from __future__ import annotations
 
 from typing import Any
@@ -11,7 +7,7 @@ from .schema import Workspace
 
 
 def compute(op: str, vals: tuple[Any, ...]) -> Any:
-    """vals 已按 arg_role 顺序排列。整除采用向下取整，除数不得为0。"""
+    """Evaluate an operator on role-ordered parents; integer division uses floor semantics."""
     if op == "add":
         return vals[0] + vals[1]
     if op == "sub":
@@ -36,7 +32,7 @@ def compute(op: str, vals: tuple[Any, ...]) -> Any:
 
 
 def evaluate(ws: Workspace) -> dict[str, Any]:
-    """按拓扑序计算全部节点真值，返回 node_id→value。"""
+    """Return reference values for every node in topological order."""
     values: dict[str, Any] = {}
     for nid in ws.topo_order():
         node = ws.nodes[nid]
@@ -49,7 +45,7 @@ def evaluate(ws: Workspace) -> dict[str, Any]:
 
 
 def check_range(values: dict[str, Any], bound: int = 999) -> bool:
-    """首版数值范围约束：所有数值节点 |v| ≤ bound（布尔除外）。"""
+    """Check the absolute bound on numeric node values, excluding booleans."""
     for v in values.values():
         if isinstance(v, bool):
             continue

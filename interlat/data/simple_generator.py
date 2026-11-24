@@ -1,13 +1,4 @@
-"""简化课程生成器：从最简设置验证潜在工作空间机制。
-
-阶段1（本文件默认）：单位数加法，2 输入 1 输出，值 0～9。
-  a + b = c，查询 c。编辑 a 或 b。
-阶段2：单位数加减乘，3 节点链。
-阶段3：两位数、浅图（2～3 节点）。
-
-输出格式与主生成器兼容（structure_family/initial_state/edits/reference/graph），
-可直接用 collate/train 管线。
-"""
+"""Generate shallow arithmetic graphs for the single-operation curriculum."""
 from __future__ import annotations
 
 import json
@@ -48,7 +39,7 @@ def make_sample(rng: random.Random, base_id: str, op: str = "add",
     if not reference.check_range(vals, bound=bound):
         return make_sample(rng, base_id, op, max_val, bound)
 
-    task_text = f"{ent} 计算：a={a}, b={b}。求 a {'+' if op=='add' else '-' if op=='sub' else '*'} b。"
+    task_text = f"{ent} calculation: a={a}, b={b}. Find a {'+' if op=='add' else '-' if op=='sub' else '*'} b."
 
     def run(edits_seq):
         w = _make_ws(ent, a, b, op)

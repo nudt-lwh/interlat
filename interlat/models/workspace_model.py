@@ -1,12 +1,4 @@
-"""InterLat 神经工作空间：Encode / Execute / Read（方案 v1.0 §模型结构）。
-
-- Encode：冻结骨干＋encoder LoRA 编码局部事实，投影为 2×256 节点状态；
-  输入节点只编码本地事实，不读其他输入（防信息泄漏）。
-- Execute：4层×256 小型 Transformer，父节点状态＋算子嵌入＋arg_role 嵌入
-  → 新节点状态；推理时只接收连续状态，不解码后外部计算。
-- Read：查询输出节点状态投影到骨干输入维度作连续前缀，＋reader LoRA 生成答案。
-- 辅助状态头：数值用符号+数字序列监督，布尔二分类；仅训练/分析用。
-"""
+"""Encode local facts, execute graph operators and read answers from node states."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -36,13 +28,7 @@ LABEL_ALIGN = _os.environ.get("IL_LABEL_ALIGN", "left_eos")
 
 
 def value_to_labels(v) -> tuple[int, list[int]]:
-    """数值→(符号, 数字序列)；布尔→(0, [int])。
-
-    v9：左对齐数字＋EOS 终止符＋PAD 填充。5 → [5,10,11,11]，
-    120 → [1,2,0,10]。解码读到 EOS 停止，消除单位数右对齐 PAD 歧义
-    （诊断发现旧右对齐表示导致单位数 +1 错误占主导）。
-    right_pad（v8 消融）：5 → [11,11,11,5]，无 EOS。
-    """
+    """Encode a value as sign and digit labels with the selected EOS and padding convention."""
     if LABEL_ALIGN == "right_pad":
         if isinstance(v, bool):
             return 0, [DIGIT_PAD] * (MAX_DIGITS - 1) + [int(v)]
@@ -60,7 +46,7 @@ def value_to_labels(v) -> tuple[int, list[int]]:
 
 
 def decode_digits(seq: list[int]) -> str:
-    """数字序列解码：left_eos 读到 EOS 停止；right_pad 跳过前导 PAD。"""
+    """Decode digit labels, stopping at EOS or skipping leading padding as appropriate."""
     if LABEL_ALIGN == "right_pad":
         return "".join(str(d) for d in seq if d != DIGIT_PAD)
     out = []
@@ -72,12 +58,7 @@ def decode_digits(seq: list[int]) -> str:
 
 
 class StateHead(nn.Module):
-    """类型化状态读出：node_tokens=2 池化（v9，单位数）；>2 逐位（多位数）。
-
-    单位数用池化 MLP（v9 验证可靠）；多位数（node_tokens=1+MAX_DIGITS）
-    用逐位独立解码——token0 符号，token1.. 各对应一个数字位，保留逐位
-    结构以忠实编码 0-999（多位数瓶颈的针对性改进）。
-    """
+    """Read signs and digits from pooled or position-specific node states."""
 
     def __init__(self, dim: int = NODE_DIM, node_tokens: int = NODE_TOKENS):
         super().__init__()
@@ -106,7 +87,7 @@ class StateHead(nn.Module):
 
 
 class Executor(nn.Module):
-    """Execute 算子：共享更新器，算子与角色条件化。维度可配置（v5 对齐骨干）。"""
+    """Apply a shared update conditioned on the operator and parent roles."""
 
     def __init__(self, dim: int = NODE_DIM, layers: int = 4, heads: int = 4,
                  node_tokens: int = NODE_TOKENS):
@@ -121,13 +102,13 @@ class Executor(nn.Module):
         self.query = nn.Parameter(torch.randn(node_tokens, dim) * 0.02)
 
     def embed_parents(self, parent_z: torch.Tensor, roles: torch.Tensor) -> torch.Tensor:
-        """父节点状态加角色嵌入并展平：(B,P,T,D)→(B,P*T,D)。"""
+        """Add role embeddings and flatten parents and state tokens into a single sequence."""
         B, P = parent_z.shape[:2]
         return parent_z.flatten(1, 2) + self.role_emb(roles).unsqueeze(2).repeat(
             1, 1, self.node_tokens, 1).flatten(1, 2)
 
     def forward_single(self, x_parents: torch.Tensor, ops: torch.Tensor) -> torch.Tensor:
-        """单节点重执行：x_parents 已含角色嵌入 (B,P*T,D)。"""
+        """Execute one node from role-embedded parent states."""
         B = x_parents.shape[0]
         q = self.query.unsqueeze(0).expand(B, -1, -1) + self.op_emb(ops).unsqueeze(1)
         out = self.net(torch.cat([q, x_parents], dim=1))
@@ -146,7 +127,7 @@ class Executor(nn.Module):
 
 @dataclass
 class BatchGraph:
-    """一个 batch 的图工作空间（节点按拓扑序排布，input 在前）。"""
+    """Store a batch of topologically ordered graphs with input nodes first."""
     input_texts: list[list[str]]        # B×n_in 局部事实
     derived_ops: torch.Tensor           # (B, n_der)
     derived_parents: torch.Tensor       # (B, n_der, P) 全局节点索引
@@ -182,7 +163,7 @@ class InterLatModel(nn.Module):
 
     def execute_llm(self, parent_z: torch.Tensor, op_ids: torch.Tensor,
                     device) -> torch.Tensor:
-        """parent_z: (B,P,T,D); op_ids: (B,)。逐节点用骨干前向计算。"""
+        """Execute nodes with the backbone using parent states and operator IDs."""
         B, P = parent_z.shape[:2]
         self.backbone.set_adapter("executor")
         prefix = self.exec_proj(parent_z.flatten(2))          # (B, P*T, hidden)
@@ -200,13 +181,7 @@ class InterLatModel(nn.Module):
         return self.exec_out(pooled).view(B, self.node_tokens, self.node_dim)
 
     def encode_inputs(self, texts: list[list[str]], device) -> torch.Tensor:
-        """批量编码局部事实→(B, n_in, node_tokens, dim)。
-
-        池化模式(node_tokens=2)：整句均值池化（单位数可靠）。
-        逐位模式(node_tokens>2)：取数字 token 的隐藏状态作逐位状态，
-        保留多位数逐位信息（修复均值池化丢失多位数的根本瓶颈）。
-        输入格式 'name = 123'，数字在序列末尾。
-        """
+        """Encode local facts into pooled or digit-aligned input states."""
         B = len(texts)
         flat = [t for row in texts for t in row]
         enc = self.tok(flat, return_tensors="pt", padding=True,
@@ -248,10 +223,7 @@ class InterLatModel(nn.Module):
         return z.view(B, n_in, self.node_tokens, self.node_dim)
 
     def execute_all(self, z_in: torch.Tensor, g: BatchGraph) -> torch.Tensor:
-        """按拓扑序逐个执行派生节点，返回全部节点状态 (B, N, T, dim)。
-
-        同一家族内图骨架一致，父节点索引跨样本相同，用 gather 批量收集。
-        """
+        """Evaluate derived nodes in topological order and return the full state tensor."""
         B, n_in = z_in.shape[:2]
         states = list(z_in.unbind(dim=1))
         n_der = g.derived_ops.shape[1]
@@ -290,14 +262,14 @@ class InterLatModel(nn.Module):
 
     def read_answers(self, z_all: torch.Tensor, g: BatchGraph, device,
                      max_new_tokens: int = 16, generate: bool = False):
-        """查询输出节点连续前缀＋查询文本→答案。返回 loss 或生成 ids。"""
+        """Compute loss or generate answer tokens from the query and output states."""
         self.backbone.set_adapter("reader")
         B = z_all.shape[0]
         out_z = torch.stack([z_all[b, g.query_out_idx[b]] for b in range(B)], 0)
         state_prefix = self.read_proj(out_z.flatten(2))       # (B, n_out*T, hidden)
-        # 查询文本＋输出节点结构标签（方案要求：读取器知道问的是哪个节点）
+        # Append the queried output node names.
         if g.query_out_names is not None:
-            cond_texts = [f"{q} 输出节点: {', '.join(names)}"
+            cond_texts = [f"{q} Output nodes: {', '.join(names)}"
                           for q, names in zip(g.query_texts, g.query_out_names)]
         else:
             cond_texts = list(g.query_texts)
@@ -313,7 +285,7 @@ class InterLatModel(nn.Module):
                                           pad_token_id=self.tok.pad_token_id)
         a = self.tok(g.answer_texts, return_tensors="pt", padding=True,
                      truncation=True, max_length=24).to(device)
-        # 答案后追加 EOS，教会模型停止（修复生成不停止问题）
+        # Terminate each answer with EOS.
         eos = torch.full((B, 1), self.tok.eos_token_id, device=device, dtype=torch.long)
         aids = torch.cat([a["input_ids"], eos], dim=1)
         amask = torch.cat([a["attention_mask"], torch.ones(B, 1, device=device, dtype=torch.long)], dim=1)
@@ -329,11 +301,7 @@ class InterLatModel(nn.Module):
 
     def read_answers_from_soft(self, soft_prefix: torch.Tensor, g: BatchGraph,
                                device) -> torch.Tensor:
-        """辅助路径：状态读出的软嵌入前缀（可微）再回答。
-
-        soft_prefix: (B, n_out, hidden)＝读出概率分布加权 token 嵌入，
-        答案梯度可经此回传到状态头与 Execute。推理时不使用此路径。
-        """
+        """Train the answer reader from differentiable state-head predictions."""
         self.backbone.set_adapter("reader")
         B = soft_prefix.shape[0]
         prefix = soft_prefix

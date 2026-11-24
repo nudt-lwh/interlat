@@ -1,1 +1,1 @@
-"""InterLat：可编辑与可组合的潜在推理工作空间。"""
+"""Editable and composable reasoning workspaces."""

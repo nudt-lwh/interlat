@@ -1,16 +1,4 @@
-"""信念图编辑求解器：把 C0/C1/C3 机制落地到 Belief-R 信念修正。
-
-核心思想（我们的最大优势）：
-- 把前提建成信念图：规则节点(若P则Q)、事实节点、结论节点。
-- 新证据作为编辑：判断新前提是否与原推理相关（后件匹配）。
-  - 相关（C0）：提供替代路径 → 局部重算受影响结论（确定→不确定）。
-  - 无关（C1）：保持原结论不变。
-- 局部重算（C3）：只重算受编辑影响的结论节点，保留无关信念。
-
-Belief-R tollens 结构：若P则Q；非Q ⇒ 非P（确定）。
-加入 若R则Q（后件Q匹配）⇒ Q有替代原因 ⇒ 非Q不能反推非P ⇒ 不确定(c)。
-加入 若S则T（后件T≠Q）⇒ 无关 ⇒ 保持非P(b)。
-"""
+"""Revise conclusions by updating rules and facts in a belief graph."""
 from __future__ import annotations
 
 import os
@@ -26,7 +14,7 @@ def load_belief():
 
 
 def parse_premises(questions):
-    """解析前提行：返回 (rules, facts)。rule=(antecedent, consequent)。"""
+    """Parse premises into antecedent-consequent pairs and facts."""
     rules, facts = [], []
     for line in questions.split("\n"):
         line = line.strip()
@@ -45,7 +33,7 @@ def normalize(s):
 
 
 def strip_neg(s):
-    """去掉否定词，得到肯定形式（用于匹配后件）。"""
+    """Return the affirmative form used to match consequents."""
     s = normalize(s)
     s = re.sub(r"\b(does not|do not|did not|is not|are not|was not|were not|"
                r"will not|would not|can not|cannot|could not|should not|"
@@ -54,7 +42,7 @@ def strip_neg(s):
 
 
 def stem_match(a, b):
-    """词干级匹配：处理 feels/feel 等动词形态差异。"""
+    """Match inflectional variants such as feel and feels."""
     def stems(s):
         out = []
         for w in normalize(s).split():
@@ -70,11 +58,7 @@ def stem_match(a, b):
 
 
 def solve_belief(rules, facts):
-    """给定规则与事实，求结论的确定性。
-
-    返回 'a'(必然成立) / 'b'(必然不成立) / 'c'(不确定)。
-    针对 Belief-R 的 tollens/ponens 单结论结构。
-    """
+    """Return the positive, negative or uncertain label for a ponens or tollens conclusion."""
     # 找主规则与查询结论：结论选项是关于某命题 P 的肯定/否定/不确定
     # 事实里含否定（does not / did not / is not / will not）
     neg_facts = [f for f in facts if re.search(r"\b(not|never|no)\b", f, re.I)]
@@ -101,7 +85,7 @@ def solve_belief(rules, facts):
 
 
 def belief_revision(ex_t, ex_t1):
-    """我们的方法：time_t 建信念图，time_t1 编辑＋局部重算。"""
+    """Construct the initial belief graph and revise it after the new premise."""
     rules0, facts0 = parse_premises(ex_t["questions"])
     a0 = solve_belief(rules0, facts0)
     rules1, facts1 = parse_premises(ex_t1["questions"])

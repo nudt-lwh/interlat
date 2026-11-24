@@ -1,8 +1,4 @@
-"""InterLat 工作空间数据结构（方案 v1.0 §状态结构）。
-
-首版：依赖图由任务规格提供；z 为连续状态占位（符号版用 value 存真值，
-神经版替换为 tensor）。本模块不依赖任何第三方库。
-"""
+"""Define the node, query and dependency structures of a workspace."""
 from __future__ import annotations
 
 from dataclasses import dataclass, field
@@ -79,7 +75,7 @@ class Workspace:
         self.nodes[node.node_id] = node
 
     def topo_order(self) -> list[str]:
-        """Kahn 拓扑排序；图必须无环（生成器保证）。"""
+        """Return a Kahn topological ordering of the dependency graph."""
         indeg = {nid: len(n.parents) for nid, n in self.nodes.items()}
         children: dict[str, list[str]] = {nid: [] for nid in self.nodes}
         for nid, n in self.nodes.items():
@@ -126,7 +122,7 @@ class Workspace:
         return seen | set(targets)
 
     def affected(self, edited: set[str], query: Optional[str] = None) -> set[str]:
-        """A = Desc(I) ∩ Anc(q)；query 为 None 时重算全部后代（首版策略）。"""
+        """Intersect descendants of edited nodes with ancestors of the query, if supplied."""
         desc = self.descendants(edited)
         if query is None:
             return desc

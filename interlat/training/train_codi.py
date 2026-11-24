@@ -1,15 +1,4 @@
-"""CODI 对照（同骨干同数据复现，EMNLP 2025 配方）。
-
-教师任务：任务文本＋显式计算轨迹→答案（交叉熵）；
-学生任务：任务文本＋<bot>＋6 个连续思考（末层隐状态经 MLP+LN 投影喂回）＋<eot>→答案；
-蒸馏：答案前冒号位置全层隐激活 L1 对齐（教师 stop-gradient，按教师批内 std 归一）。
-与 InterLat 共享同一任务/真值/划分，保证公平。
-
-用法：
-  python -m interlat.training.train_codi --data experiment_data/runs/exp03_formal_data \
-      --model experiment_data/artifacts/Qwen3-1.7B --out experiment_data/runs/exp03_codi_5090 \
-      --epochs 2 --micro-batch 8 --grad-accum 8
-"""
+"""Train continuous-thought students with hidden-state distillation from a trace teacher."""
 from __future__ import annotations
 
 import argparse
@@ -144,7 +133,7 @@ def main() -> None:
             for line in f:
                 s = json.loads(line)
                 p, t = cot_text(s, "original")
-                cot, ans = t.rsplit("\n答案: ", 1)
+                cot, ans = t.rsplit("\nAnswer: ", 1)
                 recs.append((p, cot + "\n", ans.strip()))
                 if args.limit and len(recs) >= args.limit:
                     break

@@ -1,16 +1,4 @@
-"""实验04：单编辑主效果评估（神经工作空间）。
-
-对每个测试样本：
-- 路线A：从编辑后输入完整重建工作空间并读取答案；
-- 路线B：原工作空间上神经编辑＋局部重执行后读取答案；
-指标：两路线答案准确率（对真值）、路线间一致率、无关节点保持率、
-重算节点数、编辑耗时 vs 重建耗时。
-
-用法：
-  python -m interlat.evaluation.eval_edit --model <骨干> --ckpt <ckpt_final.pt> \
-      --data experiment_data/runs/exp03_formal_data --out experiment_data/runs/exp04_eval \
-      --limit 300
-"""
+"""Compare local neural edits with rebuilding the graph from its modified inputs."""
 from __future__ import annotations
 
 import argparse
@@ -62,9 +50,9 @@ def main() -> None:
     ap.add_argument("--exec-layers", type=int, default=4)
     ap.add_argument("--seed", type=int, default=7)
     ap.add_argument("--reader-cache", action="store_true",
-                    help="P0-3：查询KV复用＋状态前缀按版本失效（默认关）")
+                    help="Reuse query KV entries and invalidate state prefixes by version (off by default)")
     ap.add_argument("--breakdown", action="store_true",
-                    help="P0-4：encode/execute/read 分项计时，写 summary_breakdown.json")
+                    help="Time encoding, execution and reading separately and write summary_breakdown.json")
     args = ap.parse_args()
     os.makedirs(args.out, exist_ok=True)
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -94,7 +82,7 @@ def main() -> None:
         return read_query(model, ws, qtext, out_names, device)
 
     def manual_build(g, lay):
-        """分项计时的重建：encode 与 execute 分开计时。"""
+        """Time encoding and execution separately during a full rebuild."""
         t0 = time.perf_counter()
         z_in = model.encode_inputs(g.input_texts, device)
         enc = (time.perf_counter() - t0) * 1000
@@ -250,7 +238,7 @@ def main() -> None:
 
     n = max(agg["n"], 1)
     summary = {
-        "experiment": "实验04：单编辑主效果（神经）",
+        "experiment": "Single-edit neural workspace evaluation",
         "ckpt": args.ckpt, "n_edits": agg["n"],
         "route_a_accuracy": agg["route_a_correct"] / n,
         "route_b_accuracy": agg["route_b_correct"] / n,

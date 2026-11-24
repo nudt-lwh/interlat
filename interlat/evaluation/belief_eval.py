@@ -1,13 +1,4 @@
-"""Belief-R 信念修正评测：把我们的可编辑工作空间对准 AGM/Belief-R 战场。
-
-Belief-R 结构（ΔR 框架）：
-- time_t：前提集 → 初始信念（多选 a/b/c）
-- time_t1：加入新前提 → 修正后信念（多选）
-指标：BU-Acc（该更新时更新）、BM-Acc（不该更新时保持）、BREU=平均。
-
-本评测先用骨干 LLM 的 CoT 基线跑 Belief-R，建立对照基准；
-我们的方法（结构化信念状态＋编辑）作为对照接入。
-"""
+"""Evaluate initial and revised beliefs on the Belief-R benchmark."""
 from __future__ import annotations
 
 import os

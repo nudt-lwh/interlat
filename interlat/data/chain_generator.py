@@ -1,8 +1,4 @@
-"""多图节点课程：5 节点链 a+b→c, c+d→e, e+f→g。
-
-编辑 a 只影响 c/e/g（3/5 节点重算），b/d/f 保持——体现 C3 依赖驱动局部重执行。
-值 0～9，结果 0～99。查询 g。
-"""
+"""Generate arithmetic chains for local edit and dependency tests."""
 from __future__ import annotations
 
 import json
@@ -41,7 +37,7 @@ def make_sample(rng: random.Random, base_id: str) -> dict[str, Any]:
         ws.nodes[nid].value = v
     if not reference.check_range(vmap, bound=99):
         return make_sample(rng, base_id)
-    task_text = f"{ent} 链式计算：a={vals['a']}, b={vals['b']}, d={vals['d']}, f={vals['f']}。c=a+b, e=c+d, g=e+f。求 g。"
+    task_text = f"{ent} chain calculation: a={vals['a']}, b={vals['b']}, d={vals['d']}, f={vals['f']}. Given c=a+b, e=c+d and g=e+f, find g."
 
     def run(edits_seq):
         w = _make_ws(ent, vals)

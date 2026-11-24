@@ -1,15 +1,4 @@
-"""实验02：任务生成器与符号参考器验证。
-
-检查项（全部通过才算实验02完成）：
-1. 原版真值与独立重建一致（生成器内部 run([]) vs 直接 evaluate）
-2. 每个单编辑：编辑+局部重执行 == 从修改后输入完整重建（干预一致性的符号前提）
-3. 独立组合编辑顺序交换后答案与状态一致
-4. 无关节点（非编辑目标且非其后代）值与版本保持不变
-5. 数值范围 0～999（布尔除外）
-6. 划分无泄漏：同一 base_id 不跨 train/dev/test（按基础任务随机划分；
-   结构家族数量少且各集均需覆盖，组合泛化由未见变量对测试承担）
-7. 编辑统计：重算节点数 == 后代集合大小
-"""
+"""Verify generated targets, composition, dependency updates and preservation."""
 from __future__ import annotations
 
 import argparse
@@ -25,7 +14,7 @@ from ..workspace.edit import Edit, apply_edit
 
 
 def rebuild(sample: dict, overrides: dict[str, int]) -> dict:
-    """从修改后的输入完整重建（路线A）。"""
+    """Rebuild the graph from its edited inputs."""
     inputs = dict(sample["initial_state"])
     inputs.update(overrides)
     ws = generator.build_workspace(__import__("random").Random(0),
@@ -136,7 +125,7 @@ def main() -> None:
                   for s in samples for st in s["reference"]["single"][0]["edit_stats"]]
 
     summary = {
-        "experiment": "实验02：任务生成器与符号参考器验证",
+        "experiment": "Task generator and symbolic reference validation",
         "n_samples": args.n,
         "seed": args.seed,
         "generation_seconds": round(gen_time, 3),

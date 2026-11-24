@@ -1,0 +1,20 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "torch": "2.14.1+cu130",
+  "cpu": "Intel(R) Core(TM) i7-14650HX",
+  "cpu_threads": 4,
+  "fit_seed": 42,
+  "sample_seed": 70011,
+  "samples_per_stratum": 2,
+  "strata": [
+    "width",
+    "operator family",
+    "edited digit count",
+    "shared/private"
+  ],
+  "warmup": 4,
+  "repeat_per_edit": 1,
+  "source": "arithmetic_workspace/formal_rows_42.jsonl; source_line is one-based",
+  "model": "Qwen3-1.7B plus archived encoder LoRA; bf16 embedding on CPU and FP32 blocks on selected device",
+  "timing": "Steady-state single edit of a previously built workspace, known target. Timed parsing, canonical digit tokenization, uncached Qwen forward batched within one literal, device transfers, CPU calibration, dirty propagation, rounded readout; explicit GPU synchronization. Excludes model loading, initial state construction, I/O. Same source rows and order both devices."
+}

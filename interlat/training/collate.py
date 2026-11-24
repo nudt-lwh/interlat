@@ -1,8 +1,4 @@
-"""把生成器样本转为 InterLatModel 的 BatchGraph。
-
-同一结构家族内节点骨架一致（输入顺序按 FAMILIES 定义固定，节点重命名由
-实体前缀承担），因此可按家族组 batch，父节点索引跨样本相同。
-"""
+"""Batch graphs by structural family so samples share parent indices."""
 from __future__ import annotations
 
 import random
@@ -43,7 +39,7 @@ def family_layout(family: str) -> dict[str, Any]:
 
 
 def sample_to_record(sample: dict, variant: str, rng: random.Random) -> dict:
-    """variant: original / single0 / single1 / combo。返回训练记录。"""
+    """Build a training record for the original graph, a single edit or a pair of edits."""
     fam = sample["structure_family"]
     lay = family_layout(fam)
     ent = sample["entity"]

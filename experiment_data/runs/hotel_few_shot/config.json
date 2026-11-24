@@ -1,0 +1,15 @@
+{
+  "source": "MultiWOZ 2.2, official development split shard 001",
+  "source_sha": "994fec69745c3dfd469835e90bf5cba2d1c4af47",
+  "source_url": "https://api.github.com/repos/budzianowski/multiwoz/git/blobs/994fec69745c3dfd469835e90bf5cba2d1c4af47",
+  "seed": 853991,
+  "selection": "Dev only, single explicit count plus corresponding clear unit, matching one tracked changed billing slot. Fixed seeded shuffle, 4 demonstrations containing 6 distinct human exchanges, two single-update and two two-update examples covering three guest and three stay edits; unique dev dialogue per turn and no no-op. Synthetic tariff uses same price convention as the main benchmark. No validation or test accuracy used to choose examples.",
+  "protocol": "Fixed four answered demonstration conversations followed by original query, same complete prefix history, 16-token greedy generation, thinking disabled, no logit mask, strict whole-number scoring cloned from P1-1, batch size 1, bf16, unchanged original 192 cases. Only demonstration messages are added to the original model input. Output prompt and answers archived in demos.json; full test prompt constructed by original prompt(desc,history) in P1-1/run.py.",
+  "locked_sha256": {
+    "demos.json": "a8d6c1159d9686491b4f3845af473528fe69f21ab07d7e65b8ca674c273d85d2",
+    "prepare_demos.py": "766eadbf6344a80df9eca1ed09936dd974cf8666f59d96830ca7d78a4409bfc1",
+    "evaluate.py": "811c14c2d0830e8a925bb17fbff79a976a7af5080bf082a9faa4c5d0008640d1",
+    "../hotel_replay/run.py": "ba9497874c04eb75fba21064d4fbbe3cc09f1b40d3ed56aeb8eef4485e10215d",
+    "../hotel_replay/cases.json": "b5728b75e7fc702d8733d0bf4d505e0b2de801c7a17260711e56028f1ddeed0e"
+  }
+}

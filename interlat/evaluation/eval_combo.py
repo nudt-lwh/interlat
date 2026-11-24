@@ -1,16 +1,4 @@
-"""C2 组合泛化评估：训练只见单编辑，测试零样本组合编辑。
-
-对每个测试样本施加两个编辑（数据自带 combo_forward/combo_reverse 真值）：
-- 单编辑基线（single）：逐个编辑后读取，对照 single 真值。
-- 组合正序（combo_forward）：先 edit0 再 edit1，对照 combo_forward 真值。
-- 组合反序（combo_reverse）：先 edit1 再 edit0，对照 combo_reverse 真值。
-指标：各路线答案准确率、组合顺序不变性（正序==反序）、无关节点保持率、
-组合相对单编辑的泛化差距。局部重算用 neural_edit（C3 机制）。
-
-用法：
-  python -m interlat.evaluation.eval_combo --model <骨干> --ckpt <ckpt> \
-      --data experiment_data/runs/exp03_v9_mul_data --out experiment_data/runs/c2_mul --limit 300
-"""
+"""Evaluate single edits and both orders of paired edits on unseen combinations."""
 from __future__ import annotations
 
 import argparse
@@ -156,7 +144,7 @@ def main():
     n = max(agg["n"], 1)
     sn = max(agg["single_n"], 1)
     summary = {
-        "experiment": "C2 组合泛化（训练仅单编辑，测试零样本组合）",
+        "experiment": "Paired edit generalization after single-edit training",
         "ckpt": args.ckpt, "data": args.data, "n_samples": agg["n"],
         "single_edit_accuracy": agg["single_ok"] / sn,
         "combo_forward_accuracy": agg["fwd_ok"] / n,

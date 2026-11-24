@@ -1,10 +1,4 @@
-"""诊断：状态头读出准确率 + 答案生成样例分析（定位准确率瓶颈）。
-
-用法：
-  python -m interlat.evaluation.diagnose --model <骨干> --ckpt <ckpt.pt> \
-      --data experiment_data/runs/exp03_formal_data --out experiment_data/runs/exp03_diagnosis \
-      --limit 200
-"""
+"""Inspect state-head predictions and generated answers."""
 from __future__ import annotations
 
 import argparse

@@ -1,8 +1,4 @@
-"""编辑与依赖驱动的局部重执行（符号版；神经版接口对齐后替换执行器）。
-
-首版策略：重算编辑节点的全部后代（方案 v1.0：查询相关惰性执行作为下一步优化）。
-未编辑且不在后代集合中的节点保持原值与原版本。
-"""
+"""Apply edits and recompute dependent nodes in a symbolic workspace."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -28,10 +24,7 @@ def apply_edit(
     edit: Edit,
     executor: Optional[Callable[[str, tuple], Any]] = None,
 ) -> dict[str, Any]:
-    """就地编辑并重算受影响节点，返回统计。
-
-    executor(op, parent_values) 默认用符号参考器；神经版传入连续状态执行器。
-    """
+    """Update the workspace in place and return recomputation statistics."""
     executor = executor or reference.compute
     node = ws.nodes[edit.target]
     if node.operator != "input":
@@ -75,5 +68,5 @@ def apply_edit(
 
 
 def snapshot(ws: Workspace) -> dict[str, tuple[Any, int]]:
-    """node_id→(value, version)，用于保持率审计。"""
+    """Record each node's value and version for preservation checks."""
     return {nid: (n.value, n.version) for nid, n in ws.nodes.items()}

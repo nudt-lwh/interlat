@@ -1,13 +1,4 @@
-"""我们的方法在 Belief-R 上的信念修正评测。
-
-核心：结构化信念状态＋编辑＋局部重算（C0/C1/C3）。
-把前提建成信念图：规则节点(若P则Q)、事实节点(P)、结论节点(Q)。
-新证据作为编辑：加入替代路径/否定事实 → 局部重算受影响结论，
-保留无关信念（C1），该更新时更新（C0）。
-
-实现：用骨干 LLM 做结构化信念推理（提取前提→信念状态→编辑→重算→读出），
-对比 CoT 基线的 BU-Acc 2.8% 痛点。
-"""
+"""Evaluate structured belief-state updates against Belief-R labels."""
 from __future__ import annotations
 
 import os

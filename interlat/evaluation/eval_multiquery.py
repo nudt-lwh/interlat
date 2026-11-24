@@ -1,12 +1,4 @@
-"""P0-5 多查询复用（实验07）：建一次工作空间答多查询 vs 每问重建。
-
-条件A：build 一次，依次读 q1..qk（复用节点状态；reader 每次新建 KV， unless --reader-cache）。
-条件B：每个查询各自重建后读。
-指标：每查询准确率、累计墙钟 ms、speedup=B/A。复杂族准确率低时仍报时间，准确率仅作参考。
-
-用法：python -m interlat.evaluation.eval_multiquery --model <骨干> --ckpt <ckpt> \
-   --data experiment_data/runs/exp03_formal_data --out <dir> --limit 200
-"""
+"""Compare reuse of one workspace across queries with rebuilding per query."""
 from __future__ import annotations
 
 import argparse

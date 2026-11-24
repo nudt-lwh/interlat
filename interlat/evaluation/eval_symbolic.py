@@ -1,11 +1,4 @@
-"""符号结构化状态＋增量执行 强对照（方案 v1.0 必需对照）。
-
-与神经版共享同一图与输入。比较：质量（精确）、状态存储字节、
-首次构建/编辑/重建墙钟、组合泛化。符号法天然精确，本对照用于
-诚实界定潜在表示的净价值（存储/耗时/组合），不宣称质量领先。
-
-用法：python -m interlat.evaluation.eval_symbolic --data <dir> --out <dir> --limit 300
-"""
+"""Benchmark symbolic incremental execution on the same graphs as the neural workspace."""
 from __future__ import annotations
 
 import argparse

@@ -1,13 +1,4 @@
-"""Belief-R LLM 基线：完全照搬官方 inference_local.py 的 logprob 分类协议。
-
-官方协议（HLTCHKUST/belief-revision, EMNLP 2024）：
-- time_t: 2 前提  "Premise 1: p1\nPremise 2: p2\nConclusion: [LABEL]"
-- time_t1: 3 前提 "Premise 1: p1\nPremise 2: p2\nPremise 3: p3\nConclusion: [LABEL]"
-- 对候选结论 a/b/c 分别算整段 logprob，取最高者 → 零样本分类。
-
-与 belief_graph.py 同 641 对、同 a/b/c 口径，公平可比。
-指标：time_t_acc / BU_Acc / BM_Acc / BREU。
-"""
+"""Score Belief-R answer choices using the backbone's label log probabilities."""
 from __future__ import annotations
 
 import os

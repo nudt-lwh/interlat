@@ -1,11 +1,4 @@
-"""神经工作空间的编辑与依赖驱动局部重执行（C1/C3 的神经实现）。
-
-与符号版 workspace/edit.py 接口对齐：
-- 编辑输入节点：新值经同一编码器重新 Encode，替换目标节点状态；
-- 受影响后代按拓扑序用 Execute 重算（首版重算全部后代）；
-- 未受影响节点保持原 tensor 与原版本；
-- 读取器每次基于当前工作空间新建前缀（不复用旧 KV）。
-"""
+"""Update neural states and recompute affected descendants in topological order."""
 from __future__ import annotations
 
 from dataclasses import dataclass, field
@@ -31,7 +24,7 @@ class NeuralWorkspace:
 
     @staticmethod
     def build(model: InterLatModel, g, device, layout: dict) -> "NeuralWorkspace":
-        """g: 单样本 BatchGraph；layout: collate.family_layout 输出。"""
+        """Construct a workspace from a single BatchGraph and its family layout."""
         z_in = model.encode_inputs(g.input_texts, device)      # (1, n_in, T, D)
         z_all = model.execute_all(z_in, g)                     # (1, N, T, D)
         N = z_all.shape[1]
@@ -70,7 +63,7 @@ class NeuralWorkspace:
 
 def neural_edit(model: InterLatModel, ws: NeuralWorkspace, target_name: str,
                 new_value: Any, device, op: str = "set") -> dict:
-    """编辑输入节点并局部重执行，返回统计（重算数/保持数/受影响集合）。"""
+    """Update an input node and report affected, preserved and recomputed nodes."""
     idx = ws.names.index(target_name)
     if not ws.input_mask[idx]:
         raise ValueError("first version only edits input nodes")
@@ -78,7 +71,7 @@ def neural_edit(model: InterLatModel, ws: NeuralWorkspace, target_name: str,
     old_versions = list(ws.versions)
 
     if op == "add":
-        raise NotImplementedError("add 编辑在神经版转换为新增更新节点，第二阶段实现")
+        raise NotImplementedError("Neural edits currently support set operations only")
     text = f"{target_name} = {new_value}"
     z_new = model.encode_inputs([[text]], device)[0, 0]        # (T, D)
     ws.z[0, idx] = z_new
@@ -109,12 +102,7 @@ def neural_edit(model: InterLatModel, ws: NeuralWorkspace, target_name: str,
 
 
 class ReaderKVCache:
-    """P0-3：查询 token 的 KV 复用＋输出节点状态前缀按版本精确失效。
-
-    前缀结构＝[查询文本 KV][状态前缀 KV]。查询不变时复用查询 KV；
-    状态前缀以 (query, out_names, 输出版本元组) 为 key，版本变化才重算。
-    不复用旧输出节点的 KV。
-    """
+    """Reuse query keys and values; invalidate output prefixes when node versions change."""
 
     def __init__(self):
         self.q = {}   # cond_text -> (past_key_values, q_len)
@@ -125,7 +113,7 @@ class ReaderKVCache:
         model.backbone.set_adapter("reader")
         out_idx = [ws.names.index(n) for n in out_names]
         ver = tuple(ws.versions[i] for i in out_idx)
-        cond = f"{query_text} 输出节点: {', '.join(out_names)}"
+        cond = f"{query_text} Output nodes: {', '.join(out_names)}"
         if cond not in self.q:
             q = model.tok([cond], return_tensors="pt", padding=True,
                           truncation=True, max_length=64).to(device)
@@ -159,7 +147,7 @@ class ReaderKVCache:
 
 def read_query(model: InterLatModel, ws: NeuralWorkspace, query_text: str,
                out_names: list[str], device, max_new_tokens: int = 16) -> str:
-    """基于当前工作空间新建连续前缀读取答案（不复用旧 KV）。"""
+    """Read an answer using the current workspace states."""
     from ..models.workspace_model import BatchGraph
     out_idx = torch.tensor([[ws.names.index(n) for n in out_names]], device=device)
     g = BatchGraph(input_texts=[[]], derived_ops=torch.zeros(1, 0, dtype=torch.long, device=device),

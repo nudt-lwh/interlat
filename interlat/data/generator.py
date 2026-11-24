@@ -1,9 +1,4 @@
-"""任务族A生成器：多步数量与资源计算（采购/库存/电量/时间安排）。
-
-结构家族（structure_family）＝算子骨架模板；同一基础任务的原版与全部编辑版
-共享 base_id 与家族标签，划分以家族为单位，防止泄漏。
-实体名与节点顺序在样本内随机化，防止固定槽位记忆。
-"""
+"""Generate procurement, inventory, power and scheduling tasks with randomized entity names."""
 from __future__ import annotations
 
 import json
@@ -69,26 +64,26 @@ ENTITY_PREFIXES = ["alpha", "bravo", "cedar", "delta", "ember", "fjord", "gale",
 
 TEMPLATES = {
     "purchase_budget": (
-        "{ent} 采购任务：预算 {budget} 元，单价 {unit_price} 元，运费 {shipping} 元，"
-        "现有库存 {stock} 件，目标总数 {target} 件。"
+        "{ent} has a purchasing budget of {budget} yuan. Each unit costs {unit_price} yuan and shipping costs {shipping} yuan. "
+        "Current inventory is {stock} units and the target is {target} units."
     ),
     "inventory_refill": (
-        "{ent} 库存任务：现有 {stock} 件，日耗 {daily_use} 件，计划 {days} 天，"
-        "安全余量 {safety} 件，仓容上限 {capacity} 件。"
+        "{ent} has {stock} units in stock and consumes {daily_use} units per day for {days} days. "
+        "Safety stock is {safety} units and storage capacity is {capacity} units."
     ),
     "power_schedule": (
-        "{ent} 用电任务：电量 {battery}，设备功率 {device_draw}，运行 {hours} 小时，"
-        "保留电量 {reserve}，光伏补充 {solar_gain}。"
+        "{ent} has a battery charge of {battery}. The device draws {device_draw} for {hours} hours. "
+        "The required reserve is {reserve} and the solar contribution is {solar_gain}."
     ),
     "time_plan": (
-        "{ent} 排程任务：截止时刻 {deadline}，单任务耗时 {task_time}，共 {n_tasks} 项，"
-        "休息 {break_time}，起始时刻 {start}。"
+        "{ent} has a deadline of {deadline} and {n_tasks} tasks of duration {task_time} each. "
+        "The break lasts {break_time} and work begins at {start}."
     ),
 }
 
 
 def _sample_inputs(rng: random.Random, family: str) -> dict[str, int]:
-    """采样输入并保证派生值在 0～999 且 floordiv 无零除（本族无 floordiv）。"""
+    """Sample inputs whose derived values stay within the numerical range."""
     if family == "purchase_budget":
         stock = rng.randint(0, 20)
         target = stock + rng.randint(1, 20)
@@ -164,7 +159,7 @@ def build_workspace(rng: random.Random, family: str, inputs: dict[str, int],
 
 def _edit_value(rng: random.Random, family: str, name: str,
                 current: int) -> tuple[str, int]:
-    """生成保证派生值仍在范围内的编辑（set/add）。"""
+    """Sample a set or add edit that keeps derived values within range."""
     spec_inputs = FAMILIES[family]["inputs"]
     for _ in range(64):
         if rng.random() < 0.6:
@@ -271,10 +266,7 @@ def generate(n: int, seed: int) -> list[dict[str, Any]]:
 def split_by_family(samples: list[dict[str, Any]], seed: int,
                     dev_ratio: float = 0.2, test_ratio: float = 0.2
                     ) -> dict[str, list[dict[str, Any]]]:
-    """按结构家族划分不可行（家族只有4个且都需覆盖），故按基础任务的
-    实体+结构签名划分：同一家族内按 base_id 哈希分组，保证同一基础任务
-    的所有变体同组。家族本身在 train/dev/test 都出现（家族级泛化由
-    未见变量对组合测试承担，见方案 C2）。"""
+    """Group by base task within each family so variants of a task stay in one split."""
     rng = random.Random(seed)
     ids = [s["base_id"] for s in samples]
     rng.shuffle(ids)
